@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics.Metrics;
 using System.Reflection.Emit;
 using Microsoft.EntityFrameworkCore;
@@ -19,10 +20,11 @@ namespace ProjectC.Models
         {
 
         }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(@"Host=localhost:5432;Username=postgres;Password=;Database=projectc-db");
+            optionsBuilder.UseNpgsql(@"Host=145.137.37.36:5432;Username=postgres;Password=;Database=projectc-db");
+            //optionsBuilder.UseNpgsql(@"postgres://postgres:@https://5710-145-137-37-36.eu.ngrok.io");
+            //optionsBuilder.UseNpgsql(@"");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
