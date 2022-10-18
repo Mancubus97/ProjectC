@@ -23,6 +23,25 @@ namespace ProjectC.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ProjectC.Models.Account", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("username")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.ToTable("accounts", "EF");
+                });
+
             modelBuilder.Entity("ProjectC.Models.Innovation", b =>
                 {
                     b.Property<Guid>("id")

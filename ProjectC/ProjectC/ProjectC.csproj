@@ -9,13 +9,51 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\fonts\fontawesome-webfont.eot" />
+    <Content Remove="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <Content Remove="wwwroot\fonts\fontawesome-webfont.woff" />
+    <Content Remove="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <Content Remove="wwwroot\fonts\FontAwesome.otf" />
+    <Content Remove="wwwroot\styles\font-awesome.css" />
+    <Content Remove="wwwroot\styles\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.7" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\lib\bootstrap\" />
+    <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
+    <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
+    <Folder Include="wwwroot\lib\jquery-validation\" />
+    <Folder Include="wwwroot\lib\jquery-validation\dist\" />
+    <Folder Include="wwwroot\lib\jquery\" />
+    <Folder Include="wwwroot\lib\jquery\dist\" />
+    <Folder Include="wwwroot\styles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\images\bg.jpg" />
+    <None Include="wwwroot\css\font-awesome.css" />
   </ItemGroup>
 
 </Project>
