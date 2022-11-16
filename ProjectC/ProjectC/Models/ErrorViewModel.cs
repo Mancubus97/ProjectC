@@ -20,7 +20,7 @@ namespace ProjectC.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseNpgsql(@"Host=da6c-80-60-11-5.eu.ngrok.io;Username=postgres;Password=;Database=projectc-db");
+            optionsBuilder.UseNpgsql(@"Host=7321-80-60-11-5.eu.ngrok.io;Username=postgres;Password=;Database=projectc-db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
