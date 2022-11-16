@@ -4,6 +4,8 @@ using System.Diagnostics.Metrics;
 using System.Reflection.Emit;
 using Microsoft.EntityFrameworkCore;
 
+
+
 namespace ProjectC.Models
 {
     public record Innovation(Guid id, string name) { } //A Guid is like an int. Was recommended by a teacher to use for ID's.
@@ -20,7 +22,7 @@ namespace ProjectC.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseNpgsql(@"Host=7321-80-60-11-5.eu.ngrok.io;Username=postgres;Password=;Database=projectc-db");
+            optionsBuilder.UseNpgsql(@"Host=6.tcp.eu.ngrok.io:16848;Username=postgres;Password=;Database=projectc-db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
