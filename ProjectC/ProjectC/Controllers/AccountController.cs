@@ -20,17 +20,17 @@ namespace ProjectC.Controllers
                 var userDetails = db.accounts.Where(_ => _.username == account.username && _.password == account.password).FirstOrDefault();
                 if (userDetails != null)
                 {
-                    Console.WriteLine("Here");
                     return View("Create");
                 }
                 else
                 {
-                    Console.WriteLine("Here");
                     return View("Error");
                 }
             }
                 
         }
+
+        
     }
     
 }
