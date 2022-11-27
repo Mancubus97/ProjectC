@@ -1,44 +1,66 @@
 ﻿
 @{
 	ViewData["Title"] = "Login";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = "~/Views/Shared/_Layout1.cshtml";
 }
 
-<h1>Login</h1>
-	<div class="clear-loading spinner">
-		<span></span>
-	</div>
-	<div class="w3ls-login box box--big">
-		<!-- form starts here -->
-		<form action="./Account/Verify" method="post">
-			<div class="agile-field-txt">
-				<label><i class="fa fa-user" aria-hidden="true"></i> Username </label>
-				<input type="text" name="username" placeholder="Enter User Name" required="" />
-			</div>
-			<div class="agile-field-txt">
-				<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> password </label>
-				<input type="password" name="password" placeholder="Enter Password" required="" id="myInput" />
-				<div class="agile_label">
-					<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
-					<label class="check" for="check3">Show password</label>
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="./sign.css">
+	<title>Log in</title>
+</head>
+
+<body>
+	<div class="container" id="container">
+		<div class="form-container sign-in-container">
+			<form action="./Account/Verify" method="post">
+				<h1>Log in</h1>
+				<span>Gebruik uw account</span>
+				<div class="agile-field-txt">
+					<label><i class="fa fa-user" aria-hidden="true"></i> Username </label>
+					<input type="text" name="username" placeholder="Enter User Name" required="" />
 				</div>
-				<div class="agile-right">
-					<a href="#">forgot password?</a>
+				<div class="agile-field-txt">
+					<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> password </label>
+					<input type="password" name="password" placeholder="Enter Password" required="" id="myInput" />
+					<div class="agile_label">
+						<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+						<label class="check" for="check3">Show password</label>
+					</div>
+					<div class="agile-right">
+						<a href="#">forgot password?</a>
+					</div>
 				</div>
-			</div>
-			<!-- script for show password -->
-			<script>
-				function myFunction() {
-					var x = document.getElementById("myInput");
-					if (x.type === "password") {
-						x.type = "text";
-					} else {
-						x.type = "password";
+				<!-- script for show password -->
+				<script>
+					function myFunction() {
+						var x = document.getElementById("myInput");
+						if (x.type === "password") {
+							x.type = "text";
+						} else {
+							x.type = "password";
+						}
 					}
-				}
-			</script>
-			<!-- //end script -->
+				</script>
+				<!-- //end script -->
+				<button type="submit">Log in</button>
 				<input type="submit" value="LOGIN">
-		</form>
+			</form>
+			<form action="/signup">
+				<div class="goto">
+					<h4>Als u nog geen account heeft, druk dan op de knop hironder</h4>
+					<button class="ghost" id="signUp">Ga naar Aanmelden</button>
+				</div>
+				
+			</form>
+		</div>
 	</div>
-	<!-- //form ends here -->
+</body>
+
+</html>
