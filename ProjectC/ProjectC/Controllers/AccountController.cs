@@ -12,7 +12,13 @@ namespace ProjectC.Controllers
             return View();
         }
 
-        [HttpPost]
+		[HttpGet]
+		public IActionResult Register()
+		{
+			return View();
+		}
+
+		[HttpPost]
         public ActionResult Verify(Account account)
         {
             using (MyDbContext db = new MyDbContext())
