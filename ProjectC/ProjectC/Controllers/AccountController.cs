@@ -42,7 +42,7 @@ namespace ProjectC.Controllers
 		{
 			using (MyDbContext db = new MyDbContext())
 			{
-				var userDetails = db.accounts.Where(_ => _.username == account.username && _.password == account.password).FirstOrDefault();
+				var userDetails = db.accounts.Where(_ => _.username == account.username).FirstOrDefault();
 				if (userDetails != null)
 				{
 					return View("Error2");
