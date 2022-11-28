@@ -9,13 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\Home\**" />
     <Compile Remove="wwwroot\js\**" />
-    <Content Remove="Views\Home\**" />
     <Content Remove="wwwroot\js\**" />
-    <EmbeddedResource Remove="Views\Home\**" />
     <EmbeddedResource Remove="wwwroot\js\**" />
-    <None Remove="Views\Home\**" />
     <None Remove="wwwroot\js\**" />
   </ItemGroup>
 
@@ -37,6 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />

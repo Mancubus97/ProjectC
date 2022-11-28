@@ -18,10 +18,20 @@ if (!app.Environment.IsDevelopment())
 }
 
 
+
+/*public record Innovation(Guid id, string name, string description, double price, int amount, double implementCosts
+	   , double personelSavings, int hoursSavings, int implementHours)
+{ } //A Guid is like an int. Was recommended by a teacher to use for ID's.
+
+*/
+
+
+
 //do data things
 var dbContext = new MyDbContext();
 //create data
 //dbContext.accounts.Add(new Account(Guid.NewGuid(),"superadmin", "Admin321!"));
+//dbContext.innovations.Add(new Innovation(Guid.NewGuid(), "incontinentiemateriaal", "incontinentiemateriaal is leuk", 20.50, 10, 10.50, 100.10, 30, 30));
 //dbContext.innovations.Add(new Innovation(Guid.NewGdontuid(), "Heupairbag"));
 //dbContext.innovations.Add(new Innovation(Guid.NewGuid(), "Zorgrobot"));
 //dbContext.innovations.Add(new Innovation(Guid.NewGuid(), "Dwaaldetectie"));
