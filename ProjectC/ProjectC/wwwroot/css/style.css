@@ -1,10 +1,11 @@
 
 * {
 	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
 }
 
 body {
-	background: #f6f5f7;
+	background: #656565;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -42,9 +43,9 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #192a56;
-	background-color: #192a56;
-	color: #FFFFFF;
+	border: 5px solid #656565;
+	background-color: #ffffff;
+	color: #000000;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -56,9 +57,9 @@ button {
 
 	button:hover {
 		outline: none;
-		background-color: white;
-		border: 1px solid #192a56;
-		color: #192a56;
+		background-color: #000000;
+		border: 5px solid #656565;
+		color: #ffffff;
 	}
 
 form {
@@ -83,24 +84,23 @@ input {
 }
 
 .container {
-	background-color: #fff;
+	background-color: #808782;
 	border-radius: 10px;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
-	width: 768px;
-	max-width: 100%;
-	min-height: 480px;
+	height: 50%
 }
 
 .form-container {
-	position: absolute;
+	position: relative;
 	top: 2em;
 	height: 100%;
 }
 
 .sign-in-container, .sign-up-container {
+	margin: auto;
 	left: 0;
-	width: 100%;
+	width: 50%;
 	z-index: 2;
 }
 
@@ -111,3 +111,23 @@ input {
 .goto {
 	padding: 1.5rem .5rem;
 }
+
+footer {
+	position: fixed;
+	margin-top: 2%;
+	text-align: center;
+	font-size: 0.8em;
+	bottom: 0;
+	color: white;
+}
+
+.bottom-button-container {
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px
+}
+
+.normal-container {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+

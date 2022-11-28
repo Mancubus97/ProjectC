@@ -6,20 +6,24 @@
     <title>@ViewData["Title"] - ProjectC</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-    <link href="~/css/styleAhmad.css" rel="stylesheet" />
+
+    <link href="~/css/style.css" rel="stylesheet" />
 </head>
 <body>
     
-    <div class="container">
+    <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - ProjectC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer>
+        <div>
+            &copy; 2022 - Campus Gouda - Dashbord
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

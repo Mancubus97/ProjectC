@@ -16,16 +16,19 @@
 </head>
 
 <body>
-	<div class="container" id="container">
+	<div id="container">
 		<div class="form-container sign-up-container">
-			<form action="./RegisterAcc" method="post">
-				<h1>Maak een account</h1>
-				<span> Gebruik uw e-mailadres voor registratie</span>
+			<form class="normal-container" action="./RegisterAcc" method="post">
+				<br>
+				<h1>Registreren</h1>
+				<br>
+				<h4>Vul hier uw gegevens in voor de registratie. Heeft u al een accoun? Druk dan op "Ga naar log in".</h4>
+				<br>
 				<div class="inputs">
 					<input type="text" placeholder="Voornaam" name="firstname" required />
 					<input type="text" placeholder="Achternaam" name="lastname" required />
 					<input type="text" placeholder="Flag" name="flag" value="false" hidden />
-					<input type="text" placeholder="Username" name="username" required />
+					<input type="text" placeholder="Gebruikersnaam" name="username" required />
 					<input type="password" placeholder="Wachtwoord" id="password" name="password" required />
 					<input type="password" placeholder="Bevestig uw wachtwoord" id="confirm_password" name="password"
 						   required />
@@ -33,9 +36,8 @@
 				</div>
 				<button type="submit">Aanmelden</button>
 			</form>
-			<form action="/">
+			<form class="bottom-button-container" action="/">
 				<div class="goto">
-					<h4>Als u een account heeft, ga dan naar het Log in pagina</h4>
 					<button class="ghost" id="signIn">Ga naar Log in</button>
 				</div>
 			</form>

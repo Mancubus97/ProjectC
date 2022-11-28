@@ -16,26 +16,27 @@
 </head>
 
 <body>
-	<div class="container" id="container">
+	<div id="container">
 		<div class="form-container sign-in-container">
-			<form action="/Account/Verify" method="post">
+			<form class="normal-container" action="/Account/Verify" method="post">
+				<br>
 				<h1>Log in</h1>
-				<span>Gebruik uw account</span>
+				<br>
+				<h3>Vul uw gegevens hier in. Als u nog geen account heeft, druk dan op "Registreren"</h3>
+				<br>
 				<div class="agile-field-txt">
-					<label><i class="fa fa-user" aria-hidden="true"></i> Username </label>
-					<input type="text" name="username" placeholder="Enter User Name" required="" />
+					<label><i class="fa fa-user" aria-hidden="true"></i></label>
+					<input type="text" name="username" placeholder="Gebruikersnaam" required="" />
 				</div>
 				<div class="agile-field-txt">
-					<label><i class="fa fa-unlock-alt" aria-hidden="true"></i> password </label>
-					<input type="password" name="password" placeholder="Enter Password" required="" id="myInput" />
+					<label><i class="fa fa-unlock-alt" aria-hidden="true"></i></label>
+					<input type="password" name="password" placeholder="Wachtwoord" required="" id="myInput" />
 					<div class="agile_label">
+						<label class="check" for="check3">Toon wachtwoord</label>
 						<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
-						<label class="check" for="check3">Show password</label>
-					</div>
-					<div class="agile-right">
-						<a href="#">forgot password?</a>
 					</div>
 				</div>
+				<br>
 				<!-- script for show password -->
 				<script>
 					function myFunction() {
@@ -51,9 +52,8 @@
 				<button type="submit">Log in</button>
 				
 			</form>
-			<form action="./Account/Register">
+			<form class="bottom-button-container" action="./Account/Register">
 				<div class="goto">
-					<h4>Als u nog geen account heeft, druk dan op de knop hieronder</h4>
 					<button class="ghost" id="signUp">Registreren</button>
 				</div>
 				
