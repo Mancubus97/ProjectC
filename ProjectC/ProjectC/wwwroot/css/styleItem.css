@@ -516,8 +516,8 @@ header {
 
 			img,
 .menu .box-container .box img {
-	height: 10;
-	width: 10;
+	height: 10rem;
+	width: 10rem;
 	/*padding: 1.5rem;*/
 	overflow: hidden;
 	border-radius: .5rem;
