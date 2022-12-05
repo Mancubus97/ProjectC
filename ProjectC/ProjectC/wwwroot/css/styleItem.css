@@ -514,10 +514,10 @@ header {
 				border-radius: 10%;
 			}
 
-
+			img,
 .menu .box-container .box img {
-	height: 10rem;
-	width: 10rem;
+	height: 10;
+	width: 10;
 	/*padding: 1.5rem;*/
 	overflow: hidden;
 	border-radius: .5rem;

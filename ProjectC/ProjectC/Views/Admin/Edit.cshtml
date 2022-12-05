@@ -20,7 +20,7 @@
 	<!-- deze knop gaat naar de dashboard pagina -->
 	<header>
 		<nav class="navbar">
-			<a href="./Admin/AdminDashboardMain">Main</a>
+			<a href="../Admin/AdminDashboardMain">Main</a>
 		</nav>
 	</header>
 
@@ -32,7 +32,7 @@
 				NIEUWE INNOVATIE TOEVOEGEN
 			</h1>
 		</div>
-		<form action="" class="order">
+			<form class="normal-container" action="../Admin/SaveItem" method="post">
 			<div class="input-box">
 				<div class="input">
 					<label for="name">Hoe heet het product?</label>
@@ -47,45 +47,37 @@
 			</div>
 			<div class="input-box">
 				<div class="input">
-					<label for="pricePerPiece">
+					<label for="price">
 						Hoeveel kost het product per stuk? (inclusief btw/bezorgkosten/overige
 						kosten)
 					</label>
-					<input type="number" name="pricePerPiece" id="pricePerPiece" min="0">
+					<input type="number" name="price" id="pricePerPiece" min="0">
 				</div>
 				<div class="input">
-					<label for="productsNumbers">Aantal producten?</label>
-					<input type="number" name="productsNumbers" id="productsNumbers" min="0">
+					<label for="amount">Aantal producten?</label>
+					<input type="number" name="amount" id="amount" min="0">
 				</div>
 			</div>
 			<div class="input-box">
 				<div class="input">
-					<label for="deployCost">Implementeringskosten?</label>
-					<input type="number" name="deployCost" id="deployCost" min="0">
+					<label for="implementCosts">Implementeringskosten?</label>
+					<input type="number" name="implementCosts" id="implementCosts" min="0">
 				</div>
 				<div class="input">
-					<label for="avrPeopleCostMonthly">Gemiddelede personeelskosten per maand?</label>
-					<input type="number" name="avrPeopleCostMonthly" id="avrPeopleCostMonthly" min="0">
+					<label for="personelSavings">personel Savings?</label>
+					<input type="number" name="personelSavings" id="personelSavings" min="0">
 				</div>
 			</div>
 			<div class="input-box">
 				<div class="input">
-					<label for="avrHourWorkMonthly">Gemiddelde arbeidsuren per maand?</label>
-					<input type="number" name="avrHourWorkMonthly" id="avrHourWorkMonthly" min="0">
+					<label for="hoursSavings">hoursSavings?</label>
+					<input type="number" name="hoursSavings" id="hoursSavings" min="0">
 				</div>
 				<div class="input">
-					<label for="currentTimeCostMonthly">Huidige tijdskosten voor dit probleem per maand?</label>
-					<input type="number" name="currentTimeCostMonthly" id="currentTimeCostMonthly" min="0">
+					<label for="implementHours">implementHours?</label>
+					<input type="number" name="implementHours" id="implementHours" min="0">
 				</div>
-				<div class="input">
-					<label for="currentMoneyCostMonthly">Huidige financiële kosten voor dit probleem per maand?</label>
-					<input type="number" name="currentMoneyCostMonthly" id="currentMoneyCostMonthly" min="0">
-				</div>
-				<div class="input">
-					<label for="
-					">Implementeringstijd in uren?</label>
-					<input type="number" name="deployTimePerHours" id="deployTimePerHours" min="0">
-				</div>
+		
 
 
 			</div>

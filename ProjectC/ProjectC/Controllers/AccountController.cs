@@ -22,18 +22,19 @@ namespace ProjectC.Controllers
 		[HttpPost]
 		public ActionResult Verify(Account account)
         {
-            using (MyDbContext db = new MyDbContext())
-            {
-                var userDetails = db.accounts.Where(_ => _.username == account.username && _.password == account.password).FirstOrDefault();
+				MyDbContext db = new MyDbContext();
+
+				var userDetails = db.accounts.Where(_ => _.username == account.username && _.password == account.password).FirstOrDefault();
                 if (userDetails != null)
                 {
-                    return View("../Admin/AdminDashboardMain");
+					var fetchedInnovs = db.innovations;
+                    return View("../Admin/AdminDashboardMain", fetchedInnovs);
                 }
                 else
                 {
                     return View("Error");
                 }
-            }
+            
                 
         }
 
