@@ -20,14 +20,14 @@ namespace ProjectC.Controllers
 		}
 
 		[HttpPost]
-        public ActionResult Verify(Account account)
+		public ActionResult Verify(Account account)
         {
             using (MyDbContext db = new MyDbContext())
             {
                 var userDetails = db.accounts.Where(_ => _.username == account.username && _.password == account.password).FirstOrDefault();
                 if (userDetails != null)
                 {
-                    return View("Create");
+                    return View("../Admin/AdminDashboardMain");
                 }
                 else
                 {

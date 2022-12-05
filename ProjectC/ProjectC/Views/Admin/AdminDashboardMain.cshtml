@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewData["Title"] = "AdminDashboardMain";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Main Dashboard</title>
+</head>
+
+<body>
+	<div class="dashboard" style="padding: 20px">
+		<div class="heading">
+			<h2>Welkom</h2>
+			<h1 style="text-align: left; margin-top: 40px; color: black">Ahmad</h1>
+		</div>
+		<div class="image-container">
+			<img src="./logo.png" alt="logo" />
+		</div>
+	</div>
+
+	<!--start innov -->
+	<section class="menu" id="menu">
+		<div class="section-header">
+			<h3 class="sub-heading">De nieuwe innovaties</h3>
+			<h1 class="heading">VERRUIM UW GEDACHTEN EN OPEN UW GEEST</h1>
+		</div>
+		<div class="box-container">
+			<div class="innov-view">
+				<div class="box">
+					<h3>Air bag</h3>
+					<p>
+						Deze innovatie is een van de intelligentste innovaties van dit jaar, alle mensen denken dat
+						dit een grote sprong kan maken op de medische sector vanwege de bedrijfsbehoefte op het land.
+					</p>
+				</div>
+				<div class="controller">
+					<!-- deze knop wijzigt de innovatiegegevens -->
+					<form action="/Admin/Edit" class="edit">
+						<input type="text" name="name" hidden="hidden">
+						<!-- deze knop bewerkt de innovatiegegevens -->
+						<input type="submit" value="Bewerk">
+					</form>
+					<!-- deze knop verwijdert de innovatiegegevens -->
+					<form action="" class="delete">
+						<input type="text" name="name" hidden="hidden">
+						<input type="submit" value="Verwijderen">
+					</form>
+					<!-- deze knop geeft de innovatiegegevens weer-->
+					<form action="/Admin/Item" class="view">
+						<input type="text" name="name" hidden="hidden">
+						<input type="submit" value="Details">
+					</form>
+				</div>
+			</div>
+			<div class="innov-view">
+				<div class="box">
+					<h3>Air bag</h3>
+					<p>
+						Deze innovatie is een van de intelligentste innovaties van dit jaar, alle mensen denken dat
+						dit een grote sprong kan maken op de medische sector vanwege de bedrijfsbehoefte op het land.
+					</p>
+				</div>
+				<div class="controller">
+					<form action="/Admin/Edit" class="edit">
+						<input type="text" name="name" hidden="hidden">
+						<input type="submit" value="Bewerk">
+					</form>
+					<form action="" class="delete">
+						<input type="text" name="name" hidden="hidden">
+						<input type="submit" value="Verwijderen">
+					</form>
+					<form action="/Admin/Item" class="view">
+						<input type="text" name="name" hidden="hidden">
+						<input type="submit" value="Details">
+					</form>
+				</div>
+			</div>
+			<div class="innov-view">
+				<div class="box">
+					<h3>Air bag</h3>
+					<p>
+						Deze innovatie is een van de intelligentste innovaties van dit jaar, alle mensen denken dat
+						dit een grote sprong kan maken op de medische sector vanwege de bedrijfsbehoefte op het land.
+					</p>
+				</div>
+				<div class="controller">
+					<form action="/Admin/Edit" class="edit">
+						<input type="text" name="name" hidden="hidden">
+						<input type="submit" value="Bewerk">
+					</form>
+					<form action="" class="delete">
+						<input type="text" name="name" hidden="hidden">
+						<input type="submit" value="Verwijderen">
+					</form>
+					<form action="/Admin/Item" class="view">
+						<input type="text" name="name" hidden="hidden">
+						<input type="submit" value="Details">
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!-- deze knoppen loggen de gebruiker uit en de andere gaat naar een formulier -->
+	<div class="buttons">
+
+		<form action="/Admin/Edit">
+			<button class="btn">voeg innovatie toe</button>
+		</form>
+	</div>
+	<!-- eindigt hier -->
+</body>
+
+</html>

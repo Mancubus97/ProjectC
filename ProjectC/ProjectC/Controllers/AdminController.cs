@@ -5,13 +5,33 @@ namespace ProjectC.Controllers
 {
     public class AdminController : Controller
     {
-        [HttpPost]
-        public ActionResult CreateInnov()
+        [HttpGet]
+        public IActionResult CreateInnov()
         {
-            return View("CreateInnovMain");
+            return View("Edit");
+
+        }
+        [HttpGet]
+        public ActionResult AdminDashboardMain()
+        {
+            return View();
 
         }
 
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            return View();
 
-    }
+        }
+
+		[HttpGet]
+		public IActionResult Item()
+		{
+			return View();
+
+		}
+
+
+	}
 }

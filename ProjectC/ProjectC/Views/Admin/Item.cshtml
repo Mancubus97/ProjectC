@@ -1,0 +1,120 @@
+﻿
+@{
+	ViewData["Title"] = "Item";
+	Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Item</title>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar">
+			<a href="../Admin/AdminDashboardMain">Main</a>
+		</nav>
+		<nav class="navbar">
+			<a href="#home" onclick="homeClick()">Huis</a>
+			<a href="#cost" onclick="costClick()">Kosten</a>
+			<a href="#invest" onclick="investClick()">Opbrengsten</a>
+		</nav>
+	</header>
+
+	<section class="home" id="home">
+		<div class="container">
+			<div class="swiper-container home-slider">
+				<div class="swiper-wrapper wrapper">
+					<div class="swiper-slide slide">
+						<div class="content">
+							<h3>Heupairbag</h3>
+							<h4>
+								De heupairbag is een riem met luchtkussens en wordt gedragen onder de kleding. Sensoren
+								in de riem detecteren als de drager valt. De luchtkussens blazen zich dan razendsnel op
+								en zijn gevuld nog voordat de drager de grond raakt. De heupairbag is getest bij
+								zorgorganisaties in West-Brabant - waaronder tanteLouise - en wordt inmiddels ook in
+								andere regio’s toegepast, zoals bij Noorderbreedte in Friesland.
+							</h4>
+						</div>
+						<div class="image">
+							<img src="images/logo.png" alt="loge image">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--start cost -->
+	<section class="menu" id="cost">
+		<div class="section-header">
+			<h1 class="heading">Kosten</h1>
+			<img src="images/cost.jpg" alt="">
+		</div>
+		<div class="box-container">
+			<div class="box">
+				<div class="header">
+					<img src="images/finance.jpg" alt="">
+					<h3>Financiën</h3>
+				</div>
+				<p>
+					Besparing op de zorg kosten van patiënten die hun heupen breken. Dit is naar schatting
+					<span>€15.99</span> per jaar.
+				</p>
+				<p>
+					Besparing op de personeelskosten van patiënten die hun heupen breken. Dit is naar schatting
+					<span>€47.99</span> per jaar.
+				</p>
+			</div>
+			<div class="box">
+				<div class="header">
+					<img src="images/time.jpg" alt="">
+					<h3>Tijd</h3>
+				</div>
+				<p>Besparing op personeelskosten die minder ingezet hoeven te worden vanwege minder heupbreuken.</p>
+			</div>
+		</div>
+	</section>
+	<!--start innov -->
+	<section class="menu" id="invest">
+		<div class="section-header">
+			<h1 class="heading">Opbrengsten</h1>
+			<img src="images/revenue.jpg" alt="">
+		</div>
+
+		<div class="box-container">
+			<div class="box">
+				<div class="header">
+					<img src="images/finance.jpg" alt="">
+					<h3>Financiën</h3>
+				</div>
+				<p>
+					Besparing op de zorg kosten van patiënten die hun heupen breken. Dit is naar schatting
+					<span>€95.99</span> per jaar.
+				</p>
+				<p>
+					Besparing op de personeelskosten van patiënten die hun heupen breken. Dit is naar schatting
+					<span>€15.99</span> per jaar.
+				</p>
+			</div>
+			<div class="box">
+				<div class="header">
+					<img src="images/time.jpg" alt="Tijd logo">
+					<h3>Tijd</h3>
+				</div>
+				<p>
+					Besparing op personeelskosten die minder ingezet hoeven te worden vanwege minder heupbreuken.
+				</p>
+			</div>
+		</div>
+
+	</section>
+</body>
+
+</html>

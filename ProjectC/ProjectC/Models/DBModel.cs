@@ -5,12 +5,9 @@ using System.Reflection.Emit;
 using Microsoft.EntityFrameworkCore;
 
 
-
 namespace ProjectC.Models
 {
-    public record Innovation(Guid id, string name, string description, double price, int amount, double implementCosts
-        , double personelSavings, int hoursSavings, int implementHours) { } //A Guid is like an int. Was recommended by a teacher to use for ID's.
-
+   
     public class MyDbContext : DbContext
     {
         public DbSet<Innovation> innovations { get; set; }
@@ -23,7 +20,7 @@ namespace ProjectC.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseNpgsql(@"Host=2.tcp.eu.ngrok.io:16459;Username=postgres;Password=;Database=projectc-db");
+            optionsBuilder.UseNpgsql(@"Host=0.tcp.eu.ngrok.io:17778;Username=postgres;Password=;Database=projectc-db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,7 +32,7 @@ namespace ProjectC.Models
         }
 
     }
-    public class ErrorViewModel
+    public class DBModel
     {
         public string? RequestId { get; set; }
 
