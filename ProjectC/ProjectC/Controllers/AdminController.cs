@@ -6,7 +6,13 @@ namespace ProjectC.Controllers
 {
     public class AdminController : Controller
     {
-        [HttpGet]
+		public MyDbContext db;
+		public AdminController(MyDbContext db)
+		{
+			this.db = db;
+		}
+
+		[HttpGet]
         public IActionResult CreateInnov()
         {
             return View("Edit");
@@ -15,9 +21,12 @@ namespace ProjectC.Controllers
         [HttpGet]
         public ActionResult AdminDashboardMain()
         {
-            return View();
-
-        }
+		
+			var fetchedInnovs = db.innovations;
+			return View("AdminDashboardMain", fetchedInnovs);
+			
+				
+		}
 
         [HttpGet]
         public IActionResult Edit()
@@ -36,14 +45,14 @@ namespace ProjectC.Controllers
 		[HttpPost]
 		public ActionResult SaveItem(Item item)
 		{
-			using (MyDbContext db = new MyDbContext())
-			{
-				db.innovations.Add(new Innovation(Guid.NewGuid(), item.name, item.description, item.price, item.amount,
-					item.implementCosts, item.personelSavings, item.hoursSavings, item.implementHours));
-				db.SaveChanges();
-				return View("AdminDashboardMain");
+			
+			db.innovations.Add(new Innovation(Guid.NewGuid(), item.name, item.description, item.price, item.amount,
+				item.implementCosts, item.personelSavings, item.hoursSavings, item.implementHours));
+			db.SaveChanges();
+			var fetchedInnovs = db.innovations;
+			return View("AdminDashboardMain", fetchedInnovs);
 				
-			}
+			
 		}
 
 	}
