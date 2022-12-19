@@ -17,132 +17,121 @@
 </head>
 
 <body>
-	<div class="dashboard" style="padding: 20px">
-		<div class="heading">
-			<h2>Welkom</h2>
-			<h1 style="text-align: left; margin-top: 40px; color: black">Ahmad</h1>
-		</div>
-		<div class="image-container">
-			<img src="./logo.png" alt="logo" />
-		</div>
-	</div>
+    <div class="dashboard" style="padding: 20px">
+        <div class="heading">
+            <h2>Welkom</h2>
+            <h1 style="text-align: left; margin-top: 40px; color: black">Ahmad</h1>
+        </div>
+    </div>
 
-	<!--start innov -->
-	<section class="menu" id="menu">
-		<div class="section-header">
-			<h3 class="sub-heading">De nieuwe innovaties</h3>
-			<h1 class="heading">VERRUIM UW GEDACHTEN EN OPEN UW GEEST</h1>
-		</div>
-		<div class="box-container">
-			@foreach (Innovation innov in Model)
+    <!--start innov -->
+    <section style="background-color: aquamarine; class="menu" id="menu ">
+        <div class="section-header">
+            <h2 class="sub-heading">De nieuwe innovaties</h2>
+            <h1 class="heading">VERRUIM UW GEDACHTEN EN OPEN UW GEEST</h1>
+        </div>
+        <div class="box-container">
+            @foreach (Innovation innovs in Model)
 			{
-				<div class="innov-view">
-					<div class="box">
-						<h3>@innov.name</h3>
-						<p>
-							@innov.description
-						</p>
-					</div>
-					<div class="controller">
-						<!-- deze knop wijzigt de innovatiegegevens -->
-						<form action="/Admin/Edit" class="edit">
-							<input type="text" name="name" hidden="hidden">
-							<!-- deze knop bewerkt de innovatiegegevens -->
-							<input type="submit" value="Bewerk">
-						</form>
-						<!-- deze knop verwijdert de innovatiegegevens -->
-						<form action="/Admin/Delete" class="delete" method="post">
-							<input type="text" name="id" hidden="hidden" value="@innov.id">
-							<input type="text" name="name" hidden="hidden" value="@innov.name">
-							<input type="text" name="description" hidden="hidden" value="@innov.description">
-							<input type="text" name="price" hidden="hidden" value="@innov.price">
-							<input type="text" name="amount" hidden="hidden" value="@innov.name">
-							<input type="text" name="implementCosts" hidden="hidden" value="@innov.implementCosts">
-							<input type="text" name="personelSavings" hidden="hidden" value="@innov.personelSavings">
-							<input type="text" name="hoursSavings" hidden="hidden" value="@innov.hoursSavings">
-							<input type="text" name="implementHours" hidden="hidden" value="@innov.implementHours">
-							<input type="text" name="sroi" hidden="hidden" value="@innov.sroi">
-							<input type="submit" value="Verwijderen">
-						</form>
-						<!-- deze knop geeft de innovatiegegevens weer-->
-						<form action="/Admin/Item" class="view" method="get">
-							<input type="text" name="name" hidden="hidden" value="@innov.name">
-							<input type="text" name="description" hidden="hidden" value="@innov.description">
-							<input type="text" name="price" hidden="hidden" value="@innov.price">
-							<input type="text" name="amount" hidden="hidden" value="@innov.name">
-							<input type="text" name="implementCosts" hidden="hidden" value="@innov.implementCosts">
-							<input type="text" name="personelSavings" hidden="hidden" value="@innov.personelSavings">
-							<input type="text" name="hoursSavings" hidden="hidden" value="@innov.hoursSavings">
-							<input type="text" name="implementHours" hidden="hidden" value="@innov.implementHours">
-							<input type="text" name="sroi" hidden="hidden" value="@innov.sroi">
-							<input type="submit" value="Details">
-
-						</form>
-					</div>
-				</div>
+            <div class="innov-view">
+                <div class="box">
+                    <h3>@innovs.name</h3>
+                    <p>
+                        @innovs.description
+                    </p>
+                </div>
+                <div class="controller">
+                    <!-- deze knop wijzigt de innovatiegegevens -->
+                    <form action="/Admin/Edit" class="edit">
+                        <input type="text" name="name" hidden="hidden">
+                        <!-- deze knop bewerkt de innovatiegegevens -->
+                        <input type="submit" value="Bewerk">
+                    </form>
+                    <!-- deze knop verwijdert de innovatiegegevens -->
+                    <form action="" class="delete">
+                        <input type="text" name="name" hidden="hidden">
+                        <input type="submit" value="Verwijderen">
+                    </form>
+                    <!-- deze knop geeft de innovatiegegevens weer-->
+                    <form action="/Admin/Item" class="view">
+                        <input type="text" name="name" hidden="hidden">
+                        <input type="submit" value="Details">
+                    </form>
+                </div>
+            </div>
 			}
 
 
 
-			@*
-			<div class="innov-view">
-				<div class="box">
-					<h3>Air bag</h3>
-					<p>
-						Deze innovatie is een van de intelligentste innovaties van dit jaar, alle mensen denken dat
-						dit een grote sprong kan maken op de medische sector vanwege de bedrijfsbehoefte op het land.
-					</p>
-				</div>
-				<div class="controller">
-					<form action="/Admin/Edit" class="edit">
-						<input type="text" name="name" hidden="hidden">
-						<input type="submit" value="Bewerk">
-					</form>
-					<form action="" class="delete">
-						<input type="text" name="name" hidden="hidden">
-						<input type="submit" value="Verwijderen">
-					</form>
-					<form action="/Admin/Item" class="view">
-						<input type="text" name="name" hidden="hidden">
-						<input type="submit" value="Details">
-					</form>
-				</div>
-			</div>
-			<div class="innov-view">
-				<div class="box">
-					<h3>Air bag</h3>
-					<p>
-						Deze innovatie is een van de intelligentste innovaties van dit jaar, alle mensen denken dat
-						dit een grote sprong kan maken op de medische sector vanwege de bedrijfsbehoefte op het land.
-					</p>
-				</div>
-				<div class="controller">
-					<form action="/Admin/Edit" class="edit">
-						<input type="text" name="name" hidden="hidden">
-						<input type="submit" value="Bewerk">
-					</form>
-					<form action="" class="delete">
-						<input type="text" name="name" hidden="hidden">
-						<input type="submit" value="Verwijderen">
-					</form>
-					<form action="/Admin/Item" class="view">
-						<input type="text" name="name" hidden="hidden">
-						<input type="submit" value="Details">
-					</form>
-				</div>
-			</div>
-*@
-		</div>
-	</section>
+            @*
+                <div class="innov-view">
+                    <div class="box">
+                        <h3>Air bag</h3>
+                        <p>
+                            Deze innovatie is een van de intelligentste innovaties van dit jaar, alle mensen denken dat
+                            dit een grote sprong kan maken op de medische sector vanwege de bedrijfsbehoefte op het land.
+                        </p>
+                    </div>
+                    <div class="controller">
+                        <form action="/Admin/Edit" class="edit">
+                            <input type="text" name="name" hidden="hidden">
+                            <input type="submit" value="Bewerk">
+                        </form>
+                        <form action="" class="delete">
+                            <input type="text" name="name" hidden="hidden">
+                            <input type="submit" value="Verwijderen">
+                        </form>
+                        <form action="/Admin/Item" class="view">
+                            <input type="text" name="name" hidden="hidden">
+                            <input type="submit" value="Details">
+                        </form>
+                    </div>
+                </div>
+                <div class="innov-view">
+                    <div class="box">
+                        <h3>Air bag</h3>
+                        <p>
+                            Deze innovatie is een van de intelligentste innovaties van dit jaar, alle mensen denken dat
+                            dit een grote sprong kan maken op de medische sector vanwege de bedrijfsbehoefte op het land.
+                        </p>
+                    </div>
+                    <div class="controller">
+                        <form action="/Admin/Edit" class="edit">
+                            <input type="text" name="name" hidden="hidden">
+                            <input type="submit" value="Bewerk">
+                        </form>
+                        <form action="" class="delete">
+                            <input type="text" name="name" hidden="hidden">
+                            <input type="submit" value="Verwijderen">
+                        </form>
+                        <form action="/Admin/Item" class="view">
+                            <input type="text" name="name" hidden="hidden">
+                            <input type="submit" value="Details">
+                        </form>
+                    </div>
+                </div>
+            *@
+        </div>
+    </section>
 
-	<!-- deze knoppen loggen de gebruiker uit en de andere gaat naar een formulier -->
-	<div class="buttons">
+    <div style="display: flex;">
+        <!-- deze knoppen loggen de gebruiker uit en de andere gaat naar Gebruikersbeheer pagina -->
+        <div style="margin: 50px;">
+            <form action="/Admin/Users">
+                <button class="btn">Gebruikersbeheer</button>
+            </form>
+        </div>
+        <!-- eindigt hier -->
+        <!-- deze knoppen loggen de gebruiker uit en de andere gaat naar een formulier innovatie -->
 
-		<form action="/Admin/Edit">
-			<button class="btn">voeg innovatie toe</button>
-		</form>
-	</div>
-	<!-- eindigt hier -->
+        <div style="margin: 50px 100px;">
+            <form action="/Admin/Edit">
+                <button class="btn">voeg innovatie toe</button>
+            </form>
+        </div>
+    </div>
+    <!-- eindigt hier -->
+
 </body>
 
 </html>

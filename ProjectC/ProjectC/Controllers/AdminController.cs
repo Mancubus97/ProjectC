@@ -37,7 +37,14 @@ namespace ProjectC.Controllers
 
         }
 
-		[HttpGet]
+
+        [HttpGet]
+        public IActionResult Users()
+        {
+            return View("users");
+
+        }
+        [HttpGet]
 		public IActionResult Item(Innovation innovToShow)
 		{
 			return View("Item", innovToShow);
