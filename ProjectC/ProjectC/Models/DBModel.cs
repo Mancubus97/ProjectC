@@ -5,6 +5,7 @@ using System.Reflection.Emit;
 using Microsoft.EntityFrameworkCore;
 
 
+
 namespace ProjectC.Models
 {
    
@@ -15,12 +16,11 @@ namespace ProjectC.Models
 
         public MyDbContext()
         {
-
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseNpgsql(@"Host=7.tcp.eu.ngrok.io:17512;Username=postgres;Password=;Database=projectc-db");
+            optionsBuilder.UseNpgsql(@"Host=2.tcp.eu.ngrok.io:12421;Username=postgres;Password=;Database=projectc-db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace ProjectC.Models
     public class DBModel
     {
         public string? RequestId { get; set; }
-
+        
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 

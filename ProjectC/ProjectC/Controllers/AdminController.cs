@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProjectC.Models;
 using System.Security.Principal;
+
 
 namespace ProjectC.Controllers
 {
@@ -12,12 +14,12 @@ namespace ProjectC.Controllers
 			this.db = db;
 		}
 
-		[HttpGet]
+		/*[HttpGet]
         public IActionResult CreateInnov()
         {
             return View("Edit");
 
-        }
+        }*/
         [HttpGet]
         public ActionResult AdminDashboardMain()
         {
@@ -39,6 +41,18 @@ namespace ProjectC.Controllers
 		public IActionResult Item(Innovation innovToShow)
 		{
 			return View("Item", innovToShow);
+
+		}
+
+		[HttpPost]
+		public IActionResult Delete(Innovation innovToDelete)
+		{
+			db.innovations.Entry(db.innovations.Find(innovToDelete.id)).State = EntityState.Detached;
+			db.innovations.Remove(innovToDelete);
+			db.SaveChanges();
+			
+			var fetchedInnovs = db.innovations;
+			return View("AdminDashboardMain", fetchedInnovs);
 
 		}
 
