@@ -36,9 +36,9 @@ namespace ProjectC.Controllers
         }
 
 		[HttpGet]
-		public IActionResult Item()
+		public IActionResult Item(Innovation innovToShow)
 		{
-			return View();
+			return View("Item", innovToShow);
 
 		}
 
@@ -47,7 +47,7 @@ namespace ProjectC.Controllers
 		{
 			
 			db.innovations.Add(new Innovation(Guid.NewGuid(), item.name, item.description, item.price, item.amount,
-				item.implementCosts, item.personelSavings, item.hoursSavings, item.implementHours));
+				item.implementCosts, item.personelSavings, item.hoursSavings, item.implementHours, ((item.socialBenefits - item.socialCosts) / item.implementCosts)));
 			db.SaveChanges();
 			var fetchedInnovs = db.innovations;
 			return View("AdminDashboardMain", fetchedInnovs);

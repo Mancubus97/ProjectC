@@ -1,4 +1,5 @@
-﻿
+﻿@model Innovation
+
 @{
 	ViewData["Title"] = "Item";
 	Layout = "~/Views/Shared/_Layout3.cshtml";
@@ -18,10 +19,10 @@
 <body>
 	<header>
 		<nav class="navbar">
-			<a href="../Admin/AdminDashboardMain">Main</a>
+			<a href="../Admin/AdminDashboardMain">Main Dashboard</a>
 		</nav>
 		<nav class="navbar">
-			<a href="#home" onclick="homeClick()">Huis</a>
+			<a href="#home" onclick="homeClick()">Beschrijving</a>
 			<a href="#cost" onclick="costClick()">Kosten</a>
 			<a href="#invest" onclick="investClick()">Opbrengsten</a>
 		</nav>
@@ -33,17 +34,13 @@
 				<div class="swiper-wrapper wrapper">
 					<div class="swiper-slide slide">
 						<div class="content">
-							<h3>Heupairbag</h3>
+							<h3>@Model.name</h3>
 							<h4>
-								De heupairbag is een riem met luchtkussens en wordt gedragen onder de kleding. Sensoren
-								in de riem detecteren als de drager valt. De luchtkussens blazen zich dan razendsnel op
-								en zijn gevuld nog voordat de drager de grond raakt. De heupairbag is getest bij
-								zorgorganisaties in West-Brabant - waaronder tanteLouise - en wordt inmiddels ook in
-								andere regio’s toegepast, zoals bij Noorderbreedte in Friesland.
+								@Model.description
 							</h4>
 						</div>
 						<div class="image">
-							<img src="images/logo.png" alt="loge image">
+							<img src="../images/logo.png" alt="loge image" style="width:200px; height:200px">
 						</div>
 					</div>
 				</div>
@@ -55,12 +52,12 @@
 	<section class="menu" id="cost">
 		<div class="section-header">
 			<h1 class="heading">Kosten</h1>
-			<img src="images/cost.jpg" alt="">
+			<img src="../images/cost.jpg" alt="" style="width:100px; height:100px">
 		</div>
 		<div class="box-container">
 			<div class="box">
-				<div class="header">
-					<img src="images/finance.jpg" alt="">
+				<div class="image">
+					<img src="../images/finance.jpg" alt="" style="width:100px; height:100px">
 					<h3>Financiën</h3>
 				</div>
 				<p>
@@ -73,8 +70,8 @@
 				</p>
 			</div>
 			<div class="box">
-				<div class="header">
-					<img src="images/time.jpg" alt="">
+				<div class="image">
+					<img src="../images/time.jpg" alt="" style="width:100px; height:100px">
 					<h3>Tijd</h3>
 				</div>
 				<p>Besparing op personeelskosten die minder ingezet hoeven te worden vanwege minder heupbreuken.</p>
@@ -84,14 +81,14 @@
 	<!--start innov -->
 	<section class="menu" id="invest">
 		<div class="section-header">
-			<h1 class="heading">Opbrengsten</h1>
-			<img src="images/revenue.jpg" alt="">
+			<h1 class="image">Opbrengsten</h1>
+			<img src="../images/revenue.jpg" alt="" style="width:100px; height:100px">
 		</div>
 
 		<div class="box-container">
 			<div class="box">
-				<div class="header">
-					<img src="images/finance.jpg" alt="">
+				<div class="image">
+					<img src="../images/finance.jpg" alt="" style="width:100px; height:100px">
 					<h3>Financiën</h3>
 				</div>
 				<p>
@@ -102,10 +99,14 @@
 					Besparing op de personeelskosten van patiënten die hun heupen breken. Dit is naar schatting
 					<span>€15.99</span> per jaar.
 				</p>
+				<p>
+					SROI (𝑚𝑎𝑎𝑡𝑠𝑐ℎ𝑎𝑝𝑝𝑒𝑙𝑖𝑗𝑘𝑒 𝑜𝑝𝑏𝑟𝑒𝑛𝑔𝑠𝑡𝑒𝑛 − 𝑚𝑎𝑎𝑡𝑠𝑐ℎ𝑎𝑝𝑝𝑒𝑙𝑖𝑗𝑘𝑒 𝑘𝑜𝑠𝑡𝑒𝑛 / 𝐼𝑛𝑖𝑡𝑖ë𝑙𝑒 𝑖𝑛𝑣𝑒𝑠𝑡𝑒𝑟𝑖𝑛𝑔𝑠𝑢𝑖𝑡𝑔𝑎𝑣𝑒)
+					<span>(@Model.sroi)</span>
+				</p>
 			</div>
 			<div class="box">
-				<div class="header">
-					<img src="images/time.jpg" alt="Tijd logo">
+				<div class="image">
+					<img src="../images/time.jpg" alt="" style="width:100px; height:100px">
 					<h3>Tijd</h3>
 				</div>
 				<p>
