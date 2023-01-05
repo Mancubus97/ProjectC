@@ -6,11 +6,13 @@
         public Guid id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public Account(Guid id, string username, string password)
+        public Boolean isAdmin { get; set; }
+        public Account(Guid id, string username, string password, Boolean isAdmin)
         {
             this.id = id;
             this.username = username;
             this.password = password;
+            this.isAdmin = isAdmin;
         }
 
 

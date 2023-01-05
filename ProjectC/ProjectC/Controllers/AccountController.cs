@@ -51,13 +51,13 @@ namespace ProjectC.Controllers
 				else
 				{
                     // creating account
-					db.accounts.Add(new Account(Guid.NewGuid(), account.username, account.password));
+					db.accounts.Add(new Account(Guid.NewGuid(), account.username, account.password, false));
 					db.SaveChanges();
 					return View("Login");
 				}
 			}
-
 		}
+
 
 
 	}

@@ -1,3 +1,5 @@
+@model IEnumerable<Account>
+
 @{
 	ViewData["Title"] = "users";
 	Layout = "~/Views/Shared/_Layout4.cshtml";
@@ -24,123 +26,80 @@
 	</section>
 	<div class="all-container">
 		<div class="generate">
-			<form action="/api/user" method="post">
+			<form action="./RegisterAdmin" method="post">
 				<h1>Creëer een nieuwe admin</h1>
 				<div class="inputs">
-					<input type="text" placeholder="Voornaam" name="fn" required />
-					<input type="text" placeholder="Achternaam" name="ln" required />
-					<input type="email" placeholder="Email" name="email" required />
+					<input type="text" placeholder="Flag" name="flag" value="false" hidden />
+					<input type="text" placeholder="Gebruikersnaam" name="username" required />
 					<input type="password" placeholder="Wachtwoord" id="password" name="password" required />
-					<input type="password" placeholder="Bevestig wachtwoord" id="Bevestig wachtwoord" name="password"
-						required />
+					<input type="password" placeholder="Bevestig uw wachtwoord" id="confirm_password" name="password"
+						   required />
 				</div>
 				<span id='message'></span>
 				<button type="submit">Aanmelden</button>
 			</form>
 		</div>
+
+
+
+
+		
 		<div class="profile-page">
-			<div class="info-box w-full txt-c-mobile">
-				<!-- Start informatie rij -->
-				<div class="box p-20 d-flex align-center">
-					<div class="fs-25">
-						<span class="c-grey">Volledige naam</span>
-						<span>Ahmad Asaad</span>
-					</div>
-					<div class="fs-25">
-						<span class="c-grey">Email</span>
-						<span>ahmad@gmail.com</span>
-					</div>
 
-					<div class="fs-25">
-						<span class="c-grey">ID</span>
-						<span>212</span>
-					</div>
-					<div class="fs-15 d-flex ">
-						<input type="checkbox" id="admin" style="width: 50px;" />
-						<label for="admin">Admin</label>
+			@foreach (Account account in Model)
+			{
+
+				<div class="info-box w-full txt-c-mobile">
+					<!-- Start informatie rij -->
+					<div class="box p-20 d-flex align-center">
+						<div class="fs-25">
+							<span class="c-grey">Username</span>
+							<span>@account.username</span>
+						</div>
+
+						<div class="fs-25">
+							<span class="c-grey">ID</span>
+							<span>@account.id</span>
+						</div>
+						@if (account.isAdmin)
+						{
+							<div class="fs-15 d-flex ">
+								<input type="checkbox" id="admin" style="width: 50px;" checked />
+								<label for="admin">Admin</label>
+
+							</div>
+						}
+						else
+						{
+							<div class="fs-15 d-flex ">
+								<input type="checkbox" id="admin" style="width: 50px;" />
+								<label for="admin">Admin</label>
+
+							</div>
+						}
+
+
+						<!-- deze knoppen Account verwijderen  -->
+						<div class="button ">
+							<form action="/Admin/DeleteAccount" class="delete" method="post">
+								
+								<input type="text" name="id" hidden="hidden" value="@account.id">
+								<input type="text" name="username" hidden="hidden" value="@account.username">
+								<input type="text" name="password" hidden="hidden" value="@account.password">
+								<input type="text" name="isAdmin" hidden="hidden" value="@account.isAdmin">
+								<button type="submit"
+									onclick="alert('Weet u zeker dat u het account wilt verwijderen!')">
+									Account
+									verwijderen
+								</button>
+							</form>
+
+						</div>
+						<!-- eindigt hier -->
 
 					</div>
-
-					<!-- deze knoppen Account verwijderen  -->
-					<div class="button ">
-						<form action="./">
-							<button type="button"
-								onclick="alert('Weet u zeker dat u het account wilt verwijderen!')">Account
-								verwijderen</button>
-						</form>
-					</div>
-					<!-- eindigt hier -->
-
 				</div>
-			</div>
-			<div class="info-box w-full txt-c-mobile">
-
-				<!-- Start informatie rij -->
-				<div class="box p-20 d-flex align-center">
-
-					<div class="fs-14">
-						<span class="c-grey">Volledige naam</span>
-						<span>Ramazan Biner</span>
-					</div>
-					<div class="fs-14">
-						<span class="c-grey">Email</span>
-						<span>ramazan@gmail.com</span>
-					</div>
-					<div class="fs-14">
-						<span class="c-grey">ID</span>
-						<span>205</span>
-					</div>
-					<div class="fs-15 d-flex ">
-						<input type="checkbox" id="admin" style="width: 50px;" />
-						<label for="admin">Admin</label>
-
-					</div>
-
-					<!-- deze knoppen Account verwijderen  -->
-					<div class="button ">
-						<form action="./">
-							<button type="button"
-								onclick="alert('Weet u zeker dat u het account wilt verwijderen!')">Account
-								verwijderen</button>
-						</form>
-					</div>
-					<!-- eindigt hier -->
-				</div>
-			</div>
-
-			<div class="info-box w-full txt-c-mobile">
-				<!-- Start informatie rij -->
-				<div class="box p-20 d-flex align-center">
-
-					<div class="fs-14">
-						<span class="c-grey">Volledige naam </span>
-						<span>Silvijn de Maat</span>
-					</div>
-					<div class="fs-14">
-						<span class="c-grey">Email</span>
-						<span>Silvijn@gmail.com</span>
-					</div>
-					<div class="fs-14">
-						<span class="c-grey">ID</span>
-						<span>217</span>
-					</div>
-					<div class="fs-15 d-flex ">
-						<input type="checkbox" id="admin" style="width: 50px;" />
-						<label for="admin">Admin</label>
-
-					</div>
-
-					<!-- deze knoppen Account verwijderen  -->
-					<div class="button ">
-						<form action="./">
-							<button type="button"
-								onclick="alert('Weet u zeker dat u het account wilt verwijderen!')">Account
-								verwijderen</button>
-						</form>
-					</div>
-					<!-- eindigt hier -->
-				</div>
-			</div>
+			}
 		</div>
 	</div>
 	<!-- Eindigt informatie rij -->

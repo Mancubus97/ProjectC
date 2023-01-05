@@ -41,7 +41,8 @@ namespace ProjectC.Controllers
         [HttpGet]
         public IActionResult Users()
         {
-            return View("users");
+			var fetchedUsers = db.accounts;
+			return View("users", fetchedUsers);
 
         }
         [HttpGet]
@@ -64,6 +65,18 @@ namespace ProjectC.Controllers
 		}
 
 		[HttpPost]
+		public IActionResult DeleteAccount(Account accountToDelete)
+		{
+			db.accounts.Entry(db.accounts.Find(accountToDelete.id)).State = EntityState.Detached;
+			db.accounts.Remove(accountToDelete);
+			db.SaveChanges();
+
+			var fetchedUsers = db.accounts;
+			return View("users", fetchedUsers);
+
+		}
+
+		[HttpPost]
 		public ActionResult SaveItem(Item item)
 		{
 			
@@ -73,6 +86,27 @@ namespace ProjectC.Controllers
 			var fetchedInnovs = db.innovations;
 			return View("AdminDashboardMain", fetchedInnovs);
 				
+			
+		}
+
+
+		[HttpPost]
+		public ActionResult RegisterAdmin(Account account)
+		{
+		
+			var userDetails = db.accounts.Where(_ => _.username == account.username).FirstOrDefault();
+			if (userDetails != null)
+			{
+				return View("../Account/Error2");
+			}
+			else
+			{
+				// creating account
+				db.accounts.Add(new Account(Guid.NewGuid(), account.username, account.password, true));
+				db.SaveChanges();
+				var fetchedUsers = db.accounts;
+				return View("users", fetchedUsers);
+			}
 			
 		}
 
