@@ -68,7 +68,7 @@ section {
 }
 
 	section:nth-child(even) {
-		background: #eee;
+		background: #D1FFD7;
 	}
 
 /*start header*/
@@ -117,7 +117,7 @@ header {
 		height: 4.5rem;
 		text-align: center;
 		line-height: 4.5rem;
-		background: #eee;
+		background: #D1FFD7;
 		border-radius: 50%;
 		margin-left: .5rem;
 		transition: .3s ease;
@@ -402,7 +402,7 @@ header {
 		}
 
 			.about .row .content .icon-container .icons {
-				background: #eee;
+				background: #D1FFD7;
 				border-radius: .5rem;
 				border: .1rem solid rgba(0, 0, 0, .2);
 				display: flex;
@@ -533,7 +533,7 @@ header {
 
 		.order form .input-box .input input,
 		.order form .input-box .input textarea {
-			background: #eee;
+			background: #D1FFD7;
 			border-radius: .5rem;
 			padding: 1rem;
 			font-size: 2rem;
@@ -757,7 +757,7 @@ header {
 			margin: 1rem;
 			text-align: center;
 			font-size: 2rem;
-			background: #eee;
+			background: #D1FFD7;
 		}
 
 	#search-box {

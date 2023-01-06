@@ -25,6 +25,7 @@
 			<a href="#home" onclick="homeClick()">Beschrijving</a>
 			<a href="#cost" onclick="costClick()">Kosten</a>
 			<a href="#invest" onclick="investClick()">Opbrengsten</a>
+			<a href="#grafisch" onclick="investClick()">Grafisch</a>
 		</nav>
 	</header>
 
@@ -39,9 +40,9 @@
 								@Model.description
 							</h4>
 						</div>
-						<div class="image">
+						@*X<div class="image">
 							<img src="../images/logo.png" alt="loge image" style="width:200px; height:200px">
-						</div>
+						</div>*@
 					</div>
 				</div>
 			</div>
@@ -106,7 +107,7 @@
 			</div>
 			<div class="box">
 				<div class="image">
-					<img src="../images/time.jpg" alt="" style="width:100px; height:100px">
+					<img src="../images/time.jpg" alt="Time foto" style="width:100px; height:100px">
 					<h3>Tijd</h3>
 				</div>
 				<p>
@@ -116,6 +117,82 @@
 		</div>
 
 	</section>
+
+	<!--start grafish -->
+	<div class="section-header">
+		<h1 class="heading" style="margin-top: 100px">Grafische</h1>
+	</div>
+	<div class="menu" style="display:flex; flex-direction:row; justify-content: center;">
+		<div style="display: block; margin: 100px;">
+			<!-- Ik creëert een canvas-element met de id "myChart". -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+			<canvas id="myChart" style="width:100%;max-width:700px;height: 300px;"></canvas>
+
+			<script>
+				var XWaarden = ["rood", "blauw", "groen", "oranje"];
+				var y_Waarden = [42, 29, 34, 15];
+				var bar_Colors = ["red", "blue", "green", "orange"];
+				// Het creëert een nieuw Chart-object met het type "pie".
+				new Chart("myChart", {
+					type: "pie",
+					// Het creëert een data-object met de labels en datasets.
+					data: {
+						labels: XWaarden,
+						// Het geeft de grafiek weer.
+						datasets: [{
+							backgroundColor: bar_Colors,
+							data: y_Waarden
+						}]
+					},
+					options: {
+						title: {
+							display: true,
+							text: "Innovatie naam"
+						}
+					}
+				});
+			</script>
+		</div>
+
+		<div style="display: block ; margin: 50px; ">
+			<!-- Ik creëert een canvas-element met de id "myChart". -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+			<canvas id="myChart1" style="width:100%;max-width:600px; height: 300px;"></canvas>
+
+			<script>
+				var X_Waarden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+				// Het creëert een nieuw Chart-object met het type "line".
+				new Chart("myChart1", {
+					type: "line",
+					// Het creëert een data-object met de labels en datasets.
+					data: {
+						labels: X_Waarden,
+						// Het geeft de grafiek weer.
+						datasets: [{
+							data: [7000, 6500, 5200, 4600, 3070, 2110, 1330, 2210, 1830, 2478],
+							borderColor: "red",
+							fill: false
+						}, {
+							data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
+							borderColor: "green",
+							fill: false
+						}, {
+							data: [300, 600, 1500, 2100, 3200, 3500, 4000, 1000, 400, 700],
+							borderColor: "blue",
+							fill: false
+						}]
+					},
+
+					options: {
+						title: {
+							display: true,
+							text: "Kosten en onderhoud innovatie"
+						}
+					}
+				});
+			</script>
+		</div>
+	</div>
 </body>
 
 </html>

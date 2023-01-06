@@ -69,7 +69,7 @@ section {
 }
 
 	section:nth-child(odd) {
-		background: #eee;
+		background: #D1FFD7;
 	}
 
 .btn {
@@ -172,7 +172,7 @@ header {
 		height: 4.5rem;
 		text-align: center;
 		line-height: 4.5rem;
-		background: #eee;
+		background: #D1FFD7;
 		border-radius: 50%;
 		margin-left: .5rem;
 		transition: .3s ease;
@@ -257,7 +257,7 @@ header {
 
 		.order form .input-box .input input,
 		.order form .input-box .input textarea {
-			background: #eee;
+			background: #D1FFD7;
 			border-radius: .5rem;
 			padding: 1rem;
 			font-size: 1.6rem;
@@ -387,7 +387,7 @@ header {
 }
 
 .bg-eee {
-	background-color: #eee;
+	background-color: #D1FFD7;
 }
 
 .bg-fav {
@@ -477,7 +477,7 @@ header {
 }
 
 .dashboard {
-	background-color: #eeeeee;
+	background-color: ##D1FFD7;
 }
 
 	.dashboard .heading {

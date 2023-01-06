@@ -44,7 +44,7 @@ a {
 button {
 	border-radius: 20px;
 	border: 5px solid #656565;
-	background-color: #ffffff;
+	background-color: #A6D3A0;
 	color: #000000;
 	font-size: 12px;
 	font-weight: bold;
@@ -57,13 +57,13 @@ button {
 
 	button:hover {
 		outline: none;
-		background-color: #000000;
+		background-color: #D1FFD7;
 		border: 5px solid #656565;
 		color: #ffffff;
 	}
 
 form {
-	background-color: #FFFFFF;
+	background-color: #D1FFD7;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -73,7 +73,7 @@ form {
 }
 
 input {
-	background-color: #eee;
+	background-color: #D1FFD7;
 	border: none;
 	font-size: 1.8rem;
 	font-weight: bold;
@@ -84,7 +84,7 @@ input {
 }
 
 .container {
-	background-color: #808782;
+	background-color: #D1FFD7;
 	border-radius: 10px;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
@@ -98,15 +98,17 @@ input {
 }
 
 .sign-in-container, .sign-up-container {
+	background-color: #D1FFD7;
 	margin: auto;
 	left: 0;
-	width: 50%;
+	width: 60%;
 	z-index: 2;
 }
 
-	.sign-in-container .inputs, .sign-up-container .inputs {
-		padding: 1.5em;
-	}
+.container .form-container sign-in-container .inputs{
+	background-color: #D1FFD7;
+	padding: 1.5em;
+}
 
 .goto {
 	padding: 1.5rem .5rem;
