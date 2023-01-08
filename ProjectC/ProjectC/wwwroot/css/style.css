@@ -44,7 +44,7 @@ a {
 button {
 	border-radius: 20px;
 	border: 5px solid #656565;
-	background-color: #A6D3A0;
+	background-color: #AD423F;
 	color: #000000;
 	font-size: 12px;
 	font-weight: bold;
@@ -57,13 +57,13 @@ button {
 
 	button:hover {
 		outline: none;
-		background-color: #D1FFD7;
+		background-color: #AD423F;
 		border: 5px solid #656565;
 		color: #ffffff;
 	}
 
 form {
-	background-color: #D1FFD7;
+	background-color: #F7D37E;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -73,7 +73,7 @@ form {
 }
 
 input {
-	background-color: #D1FFD7;
+	background-color: #36CEDC;
 	border: none;
 	font-size: 1.8rem;
 	font-weight: bold;
@@ -98,15 +98,15 @@ input {
 }
 
 .sign-in-container, .sign-up-container {
-	background-color: #D1FFD7;
+	background-color: #AD423F;
 	margin: auto;
 	left: 0;
 	width: 60%;
 	z-index: 2;
 }
 
-.container .form-container sign-in-container .inputs{
-	background-color: #D1FFD7;
+.container .form-container sign-in-container .inputs {
+	background-color: palevioletred;
 	padding: 1.5em;
 }
 
