@@ -27,13 +27,21 @@ namespace ProjectC.Controllers
 				var userDetails = db.accounts.Where(_ => _.username == account.username && _.password == account.password).FirstOrDefault();
                 if (userDetails != null)
                 {
+				if (userDetails.isAdmin)
+				{
 					var fetchedInnovs = db.innovations;
-                    return View("../Admin/AdminDashboardMain", fetchedInnovs);
+					return View("../Admin/AdminDashboardMain", fetchedInnovs);
+				}
+				if (!userDetails.isAdmin)
+				{
+					var fetchedInnovs = db.innovations;
+					return View("../User/UserDashboardMain", fetchedInnovs);
+				}
+					
                 }
-                else
-                {
-                    return View("Error");
-                }
+
+                return View("Error");
+                
             
                 
         }
