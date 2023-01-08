@@ -15,25 +15,25 @@
 	<title>Log in</title>
 </head>
 
-<body style="background-color: aquamarine">
-	<div id="container">
+<body> @*0000*@
+	<div class="container" style="background-color:#CCFFD0">
 		<div class="form-container sign-in-container">
-			<form class="normal-container" action="/Account/Verify" method="post">
-				<br>
+			<form action="/Account/Verify" method="post">
+				
 				<h1>Log in</h1>
-				<br>
+				
 				<h3>Vul uw gegevens hier in. Als u nog geen account heeft, druk dan op "Registreren"</h3>
 				<br>
-				<div class="agile-field-txt">
-					<label><i class="fa fa-user" aria-hidden="true"></i></label>
-					<input type="text" name="username" placeholder="Gebruikersnaam" required="" />
+
+				<div class="inputs">
+					<input type="text" name="username" placeholder="Gebruikersnaam" required="" style="background-color:#B3FFB3" />
+					<input type="password" name="password" placeholder="Wachtwoord" required="" id="myInput" style="background-color: #B3FFB3" />
 				</div>
-				<div class="agile-field-txt">
-					<label><i class="fa fa-unlock-alt" aria-hidden="true"></i></label>
-					<input type="password" name="password" placeholder="Wachtwoord" required="" id="myInput" />
-					<div class="agile_label">
+				<div>
+					
+					<div class="agile_label" style="display:flex">
 						<label class="check" for="check3">Toon wachtwoord</label>
-						<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+						<input style="width:75px" id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
 					</div>
 				</div>
 				<br>
@@ -49,12 +49,12 @@
 					}
 				</script>
 				<!-- //end script -->
-				<button type="submit">Log in</button>
-				
+				<button type="submit" style="background-color:aquamarine">Log in</button>
 			</form>
-			<form class="bottom-button-container" action="./Account/Register">
+
+			<form action="./Account/Register">
 				<div class="goto">
-					<button class="ghost" id="signUp">Registreren</button>
+					<button class="ghost" id="signUp"  style=" background-color:aquamarine">Registreren</button>
 				</div>
 				
 			</form>

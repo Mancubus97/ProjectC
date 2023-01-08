@@ -4,7 +4,7 @@
     --orange-color: #f59e0b;
     --green-color: #22c55e;
     --red-color: #f44336;
-    --grey-color: #888;
+    --grey-color: #D1FFD7;
     --green: #27ae60;
     --black: #192a56;
 }
@@ -208,7 +208,7 @@
 }
 
 .bg-eee {
-    background-color: #eee;
+    background-color: #D1FFD7;
 }
 
 /* End Color */
@@ -492,13 +492,13 @@
     border-bottom: 1px solid #eee;
 }
 
-.profile-page .skills-card ul li span {
-    display: inline-flex;
-    padding: 4px 10px;
-    background-color: #eee;
-    border-radius: 6px;
-    font-size: 14px;
-}
+    .profile-page .skills-card ul li span {
+        display: inline-flex;
+        padding: 4px 10px;
+        background-color: #D1FFD7;
+        border-radius: 6px;
+        font-size: 14px;
+    }
 
 .profile-page .skills-card ul li span:not(:last-child) {
     margin-right: 5px;
