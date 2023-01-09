@@ -19,7 +19,7 @@
 <body>
 	<header>
 		<nav class="navbar">
-			<a href="../Admin/AdminDashboardMain">Main Dashboard</a>
+			<a href="../Admin/AdminDashboardMain">Terug</a>
 		</nav>
 		<nav class="navbar">
 			<a href="#home" onclick="homeClick()">Beschrijving</a>
@@ -62,12 +62,12 @@
 					<h3>Financiën</h3>
 				</div>
 				<p>
-					Besparing op de zorg kosten van patiënten die hun heupen breken. Dit is naar schatting
-					<span>€15.99</span> per jaar.
+					De totale productiekosten van het aantal benodigde producten van deze innovatie is naar schatting
+					<span>@(@Model.amount * @Model.price)</span> per jaar.
 				</p>
 				<p>
-					Besparing op de personeelskosten van patiënten die hun heupen breken. Dit is naar schatting
-					<span>€47.99</span> per jaar.
+					De implementatiekosten voor deze innovatie is naar schatting
+					<span>@Model.implementCosts</span> per jaar.
 				</p>
 			</div>
 			<div class="box">
@@ -75,7 +75,10 @@
 					<img src="../images/time.jpg" alt="" style="width:100px; height:100px">
 					<h3>Tijd</h3>
 				</div>
-				<p>Besparing op personeelskosten die minder ingezet hoeven te worden vanwege minder heupbreuken.</p>
+				<p>
+					De implementatiekosten in aantal uren voor deze innovatie is naar schatting
+					<span>@Model.implementHours</span> per jaar.
+				</p>
 			</div>
 		</div>
 	</section>
@@ -93,17 +96,15 @@
 					<h3>Financiën</h3>
 				</div>
 				<p>
-					Besparing op de zorg kosten van patiënten die hun heupen breken. Dit is naar schatting
-					<span>€95.99</span> per jaar.
+					De maatschappelijke waarde word aangegeven door middel van het SROI cijfer: 
+					<span>@Model.sroi</span>(𝑚𝑎𝑎𝑡𝑠𝑐ℎ𝑎𝑝𝑝𝑒𝑙𝑖𝑗𝑘𝑒 𝑜𝑝𝑏𝑟𝑒𝑛𝑔𝑠𝑡𝑒𝑛 − 𝑚𝑎𝑎𝑡𝑠𝑐ℎ𝑎𝑝𝑝𝑒𝑙𝑖𝑗𝑘𝑒 𝑘𝑜𝑠𝑡𝑒𝑛 / 𝐼𝑛𝑖𝑡𝑖ë𝑙𝑒 𝑖𝑛𝑣𝑒𝑠𝑡𝑒𝑟𝑖𝑛𝑔𝑠𝑢𝑖𝑡𝑔𝑎𝑣𝑒)
+					
 				</p>
 				<p>
-					Besparing op de personeelskosten van patiënten die hun heupen breken. Dit is naar schatting
-					<span>€15.99</span> per jaar.
+					Besparing op de personeelskosten van patiënten die hun heupen breken is naar schatting
+					<span>@Model.personelSavings</span> per jaar.
 				</p>
-				<p>
-					SROI (𝑚𝑎𝑎𝑡𝑠𝑐ℎ𝑎𝑝𝑝𝑒𝑙𝑖𝑗𝑘𝑒 𝑜𝑝𝑏𝑟𝑒𝑛𝑔𝑠𝑡𝑒𝑛 − 𝑚𝑎𝑎𝑡𝑠𝑐ℎ𝑎𝑝𝑝𝑒𝑙𝑖𝑗𝑘𝑒 𝑘𝑜𝑠𝑡𝑒𝑛 / 𝐼𝑛𝑖𝑡𝑖ë𝑙𝑒 𝑖𝑛𝑣𝑒𝑠𝑡𝑒𝑟𝑖𝑛𝑔𝑠𝑢𝑖𝑡𝑔𝑎𝑣𝑒)
-					<span>@Model.sroi</span>
-				</p>
+				
 			</div>
 			<div class="box">
 				<div class="image">
@@ -111,7 +112,8 @@
 					<h3>Tijd</h3>
 				</div>
 				<p>
-					Besparing op personeelskosten die minder ingezet hoeven te worden vanwege minder heupbreuken.
+					De personeelskosten in aantal uren waarop word bespaard is naar schatting
+					<span>@Model.hoursSavings</span> per jaar.
 				</p>
 			</div>
 		</div>
@@ -120,7 +122,7 @@
 
 	<!--start grafish -->
 	<div class="section-header">
-		<h1 class="heading" style="margin-top: 100px">Grafische</h1>
+		<h1 class="heading" style="margin-top: 100px">Grafieken</h1>
 	</div>
 	<div class="menu" style="display:flex; flex-direction:row; justify-content: center;">
 		<div style="display: block; margin: 100px;">
@@ -129,9 +131,9 @@
 			<canvas id="myChart" style="width:100%;max-width:700px;height: 300px;"></canvas>
 
 			<script>
-				var XWaarden = ["rood", "blauw", "groen", "oranje"];
-				var y_Waarden = [42, 29, 34, 15];
-				var bar_Colors = ["red", "blue", "green", "orange"];
+				var XWaarden = ["Productiekosten", "Implementatiekosten"];
+				var y_Waarden = [42, 29];
+				var bar_Colors = ["red", "blue"];
 				// Het creëert een nieuw Chart-object met het type "pie".
 				new Chart("myChart", {
 					type: "pie",
@@ -147,7 +149,7 @@
 					options: {
 						title: {
 							display: true,
-							text: "Innovatie naam"
+							text: "@Model.name"
 						}
 					}
 				});
