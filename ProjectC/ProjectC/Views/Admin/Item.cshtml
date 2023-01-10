@@ -3,12 +3,14 @@
 @{
 	ViewData["Title"] = "Item";
 	Layout = "~/Views/Shared/_Layout3.cshtml";
+	int Productiekosten = Model.amount * (int)Model.price;
 }
 
 <!doctype html>
 <html lang="en">
 
 <head>
+	
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -61,13 +63,18 @@
 					<img src="../images/finance.jpg" alt="" style="width:100px; height:100px">
 					<h3>Financiën</h3>
 				</div>
+				
 				<p>
-					De totale productiekosten van het aantal benodigde producten van deze innovatie is naar schatting
-					<span>@(@Model.amount * @Model.price)</span> per jaar.
+					De implementatiekosten voor deze innovatie zijn
+					<span>@Model.implementCosts</span> euro.
 				</p>
 				<p>
-					De implementatiekosten voor deze innovatie is naar schatting
-					<span>@Model.implementCosts</span> per jaar.
+					De inkoopkosten van deze innovatie zijn
+					<span>@Model.price</span> per jaar.
+				</p>
+				<p>
+					De totale kosten voor deze innovatie zijn na 5 jaar
+					<span>@(@Model.price * 5 + @Model.implementCosts)</span> euro.
 				</p>
 			</div>
 			<div class="box">
@@ -76,8 +83,8 @@
 					<h3>Tijd</h3>
 				</div>
 				<p>
-					De implementatiekosten in aantal uren voor deze innovatie is naar schatting
-					<span>@Model.implementHours</span> per jaar.
+					De kosten in aantal uren voor het implementeren van deze innovatie zijn naar schatting
+					<span>@Model.implementHours</span>.
 				</p>
 			</div>
 		</div>
@@ -131,8 +138,8 @@
 			<canvas id="myChart" style="width:100%;max-width:700px;height: 300px;"></canvas>
 
 			<script>
-				var XWaarden = ["Productiekosten", "Implementatiekosten"];
-				var y_Waarden = [42, 29];
+				var XWaarden = ["Totale kosten na 10 jaar", "Totale besparingen na 10 jaar"];
+				var y_Waarden = [@(@Model.price * 10 + @Model.implementCosts), @(@Model.personelSavings * 10)];
 				var bar_Colors = ["red", "blue"];
 				// Het creëert een nieuw Chart-object met het type "pie".
 				new Chart("myChart", {
@@ -162,39 +169,59 @@
 			<canvas id="myChart1" style="width:100%;max-width:600px; height: 300px;"></canvas>
 
 			<script>
-				var X_Waarden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+				var X_Waarden = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 				// Het creëert een nieuw Chart-object met het type "line".
 				new Chart("myChart1", {
 					type: "line",
 					// Het creëert een data-object met de labels en datasets.
 					data: {
+						
 						labels: X_Waarden,
 						// Het geeft de grafiek weer.
 						datasets: [{
-							data: [7000, 6500, 5200, 4600, 3070, 2110, 1330, 2210, 1830, 2478],
-							borderColor: "red",
-							fill: false
-						}, {
-							data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
+							label: 'Personeelskosten Bespaard',
+							data: [@(@Model.personelSavings * 1), @(@Model.personelSavings * 2), @(@Model.personelSavings * 3), @(@Model.personelSavings * 4), @(@Model.personelSavings * 5)
+								, @(@Model.personelSavings * 6), @(@Model.personelSavings * 7), @(@Model.personelSavings * 8), @(@Model.personelSavings * 9), @(@Model.personelSavings * 10) 
+								, @(@Model.personelSavings * 11), @(@Model.personelSavings * 12), @(@Model.personelSavings * 13), @(@Model.personelSavings * 14)
+								, @(@Model.personelSavings * 15), @(@Model.personelSavings * 16), @(@Model.personelSavings * 17), @(@Model.personelSavings * 18), @(@Model.personelSavings * 19), @(@Model.personelSavings * 20)],
 							borderColor: "green",
-							fill: false
-						}, {
-							data: [300, 600, 1500, 2100, 3200, 3500, 4000, 1000, 400, 700],
+							fill: false,
+							
+						},
+						{
+							label: 'Inkoop Kosten',
+							data: [@(@Model.price * 1), @(@Model.price * 2), @(@Model.price * 3), @(@Model.price * 4), @(@Model.price * 5)
+															, @(@Model.price * 6), @(@Model.price * 7), @(@Model.price * 8), @(@Model.price * 9), @(@Model.price * 10)
+															, @(@Model.price * 11), @(@Model.price * 12), @(@Model.price * 13), @(@Model.price * 14)
+															, @(@Model.price * 15), @(@Model.price * 16), @(@Model.price * 17), @(@Model.price * 18), @(@Model.price * 19), @(@Model.price * 20)],
+							borderColor: "red",
+							fill: false,
+
+						}
+							,
+						{
+							label: 'Personeelsuren Bespaard',
+							data: [@(@Model.hoursSavings * 1), @(@Model.hoursSavings * 2), @(@Model.hoursSavings * 3), @(@Model.hoursSavings * 4), @(@Model.hoursSavings * 5)
+							, @(@Model.hoursSavings * 6), @(@Model.hoursSavings * 7), @(@Model.hoursSavings * 8), @(@Model.hoursSavings * 9), @(@Model.hoursSavings * 10)
+							, @(@Model.hoursSavings * 11), @(@Model.hoursSavings * 12), @(@Model.hoursSavings * 13), @(@Model.hoursSavings * 14)
+							, @(@Model.hoursSavings * 15), @(@Model.hoursSavings * 16), @(@Model.hoursSavings * 17), @(@Model.hoursSavings * 18), @(@Model.hoursSavings * 19), @(@Model.hoursSavings * 20)],
 							borderColor: "blue",
-							fill: false
+							fill: false,
+
 						}]
+													
 					},
 
 					options: {
 						title: {
 							display: true,
-							text: "Kosten en onderhoud innovatie"
+							text: "Opbrengsten personeelskosten (Y-as) na tijdsverloop in jaren (X-as)"
 						}
 					}
 				});
 			</script>
 		</div>
-
+		
 
 
 	</div>

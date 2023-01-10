@@ -41,12 +41,7 @@
                     </p>
                 </div>
                 <div class="controller">
-                    <!-- deze knop wijzigt de innovatiegegevens -->
-                    <form action="/Admin/Edit" class="edit">
-                        <input type="text" name="name" hidden="hidden">
-                        <!-- deze knop bewerkt de innovatiegegevens -->
-                        <input type="submit" value="Bewerk">
-                    </form>
+                   
                     <!-- deze knop verwijdert de innovatiegegevens -->
                         <form action="/Admin/Delete" class="delete" method="post">
                             <input type="text" name="id" hidden="hidden" value="@innov.id">
@@ -59,7 +54,7 @@
                             <input type="text" name="hoursSavings" hidden="hidden" value="@innov.hoursSavings">
                             <input type="text" name="implementHours" hidden="hidden" value="@innov.implementHours">
                             <input type="text" name="sroi" hidden="hidden" value="@innov.sroi">
-                            <input type="submit" value="Verwijderen">
+                            <input type="submit" value="Delete">
                         </form>
                         <!-- deze knop geeft de innovatiegegevens weer-->
                         <form action="/Admin/Item" class="view" method="get">
