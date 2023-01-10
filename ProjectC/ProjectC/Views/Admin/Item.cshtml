@@ -225,6 +225,48 @@
 
 
 	</div>
+
+	<div class="menu" style="display:flex; flex-direction:row; justify-content: center;">
+		<div style="display: block; margin: 100px;">
+			<!-- Ik creëert een canvas-element met de id "myChart". -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+			<canvas id="myChart2" style="width:100%;max-width:700px;height: 300px;"></canvas>
+
+			<script>
+				var XWaarden = ["Inkoopkosten (jaarbasis)", "Implementeringskosten", "Personeelskosten Bespaard (jaarbasis)"];
+				var y_Waarden = [@Model.price, @Model.implementCosts, @Model.personelSavings];
+				var bar_Colors = ["red", "blue", "green"];
+				// Het creëert een nieuw Chart-object met het type "pie".
+				new Chart("myChart2", {
+					type: "bar",
+					// Het creëert een data-object met de labels en datasets.
+					data: {
+						labels: XWaarden,
+						// Het geeft de grafiek weer.
+						datasets: [{
+							label: "Staafdiagram",
+							backgroundColor: bar_Colors,
+							data: y_Waarden
+						}]
+					},
+					options: {
+						title: {
+							display: true,
+							text: "@Model.name"
+						}
+					}
+				});
+			</script>
+		</div>
+
+
+		<div class="menu2" style="display:flex; flex-direction:row; justify-content: center;">
+
+	</div>
+
+
+
+
 </body>
 
 
