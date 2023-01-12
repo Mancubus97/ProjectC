@@ -22,6 +22,12 @@
             <h2>Welkom</h2>
             <!--<h1 style="text-align: left; margin-top: 40px; color: black">Ahmad</h1> -->
         </div>
+        <div style="margin: 50px 100px; background-color:red;border-radius: 25%;">
+            <form action="/">
+                <button class="btn" style="background-color:red">Uitloggen</button>
+            </form>
+        </div>
+
     </div>
 
     <!--start innov -->
@@ -31,8 +37,8 @@
             <h2 class="sub-heading">De nieuwe innovaties</h2>
         </div>
         <div class="box-container">
-            @foreach (Innovation innov in Model)
-			{
+        @foreach (Innovation innov in Model)
+		{
             <div class="innov-view">
                 <div class="box">
                     <h3 style="margin-bottom:50px">@innov.name</h3>
@@ -50,7 +56,7 @@
                     <input type="text" name="hoursSavings" hidden="hidden" value="@innov.hoursSavings">
                     <input type="text" name="implementHours" hidden="hidden" value="@innov.implementHours">
                     <input type="text" name="sroi" hidden="hidden" value="@innov.sroi">
-                    <input type="submit" value="Delete">
+                    <input type="submit" value="Delete" onclick="alert('Weet u zeker dat u het innovatie wilt verwijderen?')">
                 </form>
                 <!-- deze knop geeft de innovatiegegevens weer-->
                 <form action="/Admin/Item" class="view" method="get">
@@ -69,7 +75,7 @@
                 </div>
             </div>
         </div>
-			}
+	    }
 
 
 

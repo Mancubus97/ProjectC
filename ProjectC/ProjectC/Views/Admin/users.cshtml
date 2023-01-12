@@ -17,6 +17,16 @@
 </head>
 
 <body>
+	<header>
+		<div style="margin: 50px 100px; width: 100px">
+			<form action="../Admin/AdminDashboardMain">
+				<button class="btn">Terug</button>
+			</form>
+		</div>
+		@*<nav class="navbar">
+			<a href="../Admin/AdminDashboardMain">Terug</a>
+		</nav>*@
+	</header>
 	<section class="order" id="order">
 		<div class="section-header">
 
@@ -89,8 +99,6 @@
 								<input type="text" name="isAdmin" hidden="hidden" value="@account.isAdmin">
 								<button class="delete-button" type="submit"
 									onclick="alert('Weet u zeker dat u het account wilt verwijderen?')">
-									Account
-									verwijderen
 								</button>
 							</form>
 
