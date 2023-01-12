@@ -63,12 +63,12 @@
 					<!-- Start informatie rij -->
 					<div class="box p-20 d-flex align-center">
 						<div class="fs-25">
-							<span style="font-size: 15px" class="green-color">Username</span>
+							<span style="font-size: 15px" class="green-color">Username: </span>
 							<span style="font-size: 15px" >@account.username</span>
 						</div>
 
 						<div class="fs-25">
-							<span style="font-size: 15px" class="green-color">ID</span>
+							<span style="font-size: 15px" class="green-color">ID: </span>
 							<span style="font-size: 15px" >@account.id</span>
 						</div>
 						@if (account.isAdmin)
@@ -98,7 +98,7 @@
 								<input type="text" name="password" hidden="hidden" value="@account.password">
 								<input type="text" name="isAdmin" hidden="hidden" value="@account.isAdmin">
 								<button class="delete-button" type="submit"
-									onclick="alert('Weet u zeker dat u het account wilt verwijderen?')">
+									onclick="return confirm('Weet u zeker dat u dit account wilt verwijderen?')">
 								</button>
 							</form>
 

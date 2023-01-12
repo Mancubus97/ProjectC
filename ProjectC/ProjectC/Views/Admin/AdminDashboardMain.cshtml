@@ -56,10 +56,11 @@
                     <input type="text" name="hoursSavings" hidden="hidden" value="@innov.hoursSavings">
                     <input type="text" name="implementHours" hidden="hidden" value="@innov.implementHours">
                     <input type="text" name="sroi" hidden="hidden" value="@innov.sroi">
-                    <input type="submit" value="Delete" onclick="alert('Weet u zeker dat u het innovatie wilt verwijderen?')">
+                                <input type="submit" value="Delete" onclick="return confirm('Weet u zeker dat u deze innovatie wilt verwijderen?')">
+                                
                 </form>
                 <!-- deze knop geeft de innovatiegegevens weer-->
-                <form action="/Admin/Item" class="view" method="get">
+                <form action="/Admin/ItemAdmin" class="view" method="get">
                     <input type="text" name="name" hidden="hidden" value="@innov.name">
                     <input type="text" name="description" hidden="hidden" value="@innov.description">
                     <input type="text" name="price" hidden="hidden" value="@innov.price">

@@ -14,6 +14,7 @@
 		public int implementHours { get; set; }
 		public double sroi { get; set; }
 
+
 		public Innovation()
 		{
 		}

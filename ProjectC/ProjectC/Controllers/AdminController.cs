@@ -45,12 +45,14 @@ namespace ProjectC.Controllers
 			return View("users", fetchedUsers);
 
         }
-        [HttpGet]
-		public IActionResult Item(Innovation innovToShow)
+
+		[HttpGet]
+		public IActionResult ItemAdmin(Innovation innovToShow)
 		{
-			return View("Item", innovToShow);
+			return View("ItemAdmin", innovToShow);
 
 		}
+
 
 		[HttpPost]
 		public IActionResult Delete(Innovation innovToDelete)
