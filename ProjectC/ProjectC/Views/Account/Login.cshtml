@@ -16,49 +16,49 @@
 </head>
 
 <body> @*0000000*@
-	<div class="container" style="background-color:#D1FFD7">
-		<div class="form-container sign-in-container">
-			<form action="/Account/Verify" method="post">
+	<div class="form-container sign-in-container">
+		<form class="normal-container" action="/Account/Verify" method="post">
 				
-				<h1>Log in</h1>
+			<h1 style="margin-top: 10px">Log in</h1>
 				
-				<h3>Vul uw gegevens hier in. Als u nog geen account heeft, druk dan op "Registreren"</h3>
-				<br>
+			<h3>Vul uw gegevens hier in. Als u nog geen account heeft, druk dan op "Registreren"</h3>
+			<br>
 
-				<div class="inputs">
-					<input type="text" name="username" placeholder="Gebruikersnaam" required="" style="background-color:#F0F0F0" />
-					<input type="password" name="password" placeholder="Wachtwoord" required="" id="myInput" style="background-color: #F0F0F0" />
-				</div>
-				<div>
+			<div class="inputs">
+				<input type="text" name="username" placeholder="Gebruikersnaam" required=""/>
+				<input type="password" id="password" name="password" placeholder="Wachtwoord" required=""/>
+			</div>
+			<div>
 					
-					<div class="agile_label" style="display:flex">
-						<label class="check" for="check3">Toon wachtwoord</label>
-						<input style="width:75px" id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
-					</div>
+				<div class="agile_label" style="display:flex">
+					<label class="check" for="check3">Toon wachtwoord</label>
+					<input style="width:75px" id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
 				</div>
-				<br>
-				<!-- script for show password -->
-				<script>
-					function myFunction() {
-						var x = document.getElementById("myInput");
-						if (x.type === "password") {
-							x.type = "text";
-						} else {
-							x.type = "password";
-						}
+			</div>
+			<br>
+			<!-- script for show password -->
+			<script>
+				function myFunction() {
+					var x = document.getElementById("password");
+					if (x.type === "password") {
+						x.type = "text";
+						console.log(x);
+					} else {
+						x.type = "password";
+						console.log(x);
 					}
-				</script>
-				<!-- //end script -->
-				<button type="submit" style="background-color:#D1FFD7">Log in</button>
-			</form>
+				}
+			</script>
+			<!-- //end script -->
+			<button type="submit">Log in</button>
+		</form>
 
-			<form action="./Account/Register">
-				<div class="goto">
-					<button class="ghost" id="signUp"  style=" background-color:#D1FFD7">Registreren</button>
-				</div>
-				
-			</form>
-		</div>
+		<form class="bottom-button-container" action="./Account/Register">
+			<div class="goto">
+				<button id="signUp">Registreren</button>
+			</div>
+
+		</form>
 	</div>
 </body>
 

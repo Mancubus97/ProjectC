@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #D1FFD7;
+	background: #A6D3A0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -43,8 +43,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 5px solid #656565;
-	background-color: #AD423F;
+	border: 5px solid #B3FFB3;
+	background-color: #B3FFB3;
 	color: #000000;
 	font-size: 12px;
 	font-weight: bold;
@@ -57,13 +57,13 @@ button {
 
 	button:hover {
 		outline: none;
-		background-color: #AD423F;
-		border: 5px solid #656565;
-		color: #ffffff;
+		background-color: #A6D3A0;
+		border: 5px solid #A6D3A0;
+		color: #000000;
 	}
 
 form {
-	background-color: #F7D37E;
+	background-color: #ffffff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -73,7 +73,7 @@ form {
 }
 
 input {
-	background-color: #36CEDC;
+	background-color: #F0F0F0;
 	border: none;
 	font-size: 1.8rem;
 	font-weight: bold;
@@ -83,14 +83,6 @@ input {
 	width: 100%;
 }
 
-.container {
-	background-color: #D1FFD7;
-	border-radius: 10px;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-	position: relative;
-	height: 50%
-}
-
 .form-container {
 	position: relative;
 	top: 2em;
@@ -98,15 +90,14 @@ input {
 }
 
 .sign-in-container, .sign-up-container {
-	background-color: #AD423F;
 	margin: auto;
 	left: 0;
 	width: 60%;
 	z-index: 2;
 }
 
-.container .form-container sign-in-container .inputs {
-	background-color: palevioletred;
+.container .form-container .sign-in-container .inputs {
+	background-color: black;
 	padding: 1.5em;
 }
 
@@ -133,3 +124,13 @@ footer {
 	border-top-right-radius: 20px;
 }
 
+.delete-button {
+	color: white;
+	background: black;
+	border: 5px solid black;
+}
+	.delete-button:hover {
+		color: black;
+		background: white;
+		border: 5px solid white;
+	}

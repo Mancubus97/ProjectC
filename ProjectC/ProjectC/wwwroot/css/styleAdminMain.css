@@ -1,7 +1,7 @@
 /*root elements*/
 :root {
-	--main-color: #4a00e0;
-	--bg-color: #fff;
+	--mac-green-colorn-color: #4a00e0;
+	--bg-color: #A6D3A0;
 	--text-color: #0f0c27;
 	--hover: hsl(260, 100%, 51%);
 	--shadow-bar: rgba(14, 55, 54, 0.15);
@@ -11,7 +11,7 @@
 	--transition-time: .3s;
 	--section-padding: 100px;
 	--green: #27ae60;
-	--black: #192a56;
+	--black: #000000;
 	--light-color: #666;
 	--box-shaddow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
 }
@@ -830,28 +830,6 @@ header {
 			width: fit-content;
 			position: relative;
 		}
-
-			.dashboard .heading h2::after {
-				content: "";
-				width: 20%;
-				height: .1em;
-				background-color: black;
-				position: absolute;
-				bottom: -.5em;
-				left: 0;
-				border-radius: 10%;
-			}
-
-			.dashboard .heading h2::before {
-				content: "";
-				width: 60%;
-				height: .1em;
-				background-color: white;
-				position: absolute;
-				bottom: -.5em;
-				left: 20%;
-				border-radius: 10%;
-			}
 
 .innov-view {
 	position: relative;

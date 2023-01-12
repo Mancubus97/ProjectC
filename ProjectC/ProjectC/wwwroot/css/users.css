@@ -6,7 +6,7 @@
     --red-color: #f44336;
     --grey-color: #D1FFD7;
     --green: #27ae60;
-    --black: #192a56;
+    --black: #0000000;
 }
 
 /* Start Box */
@@ -381,12 +381,13 @@
 
 .profile-page .info-box .box {
     flex-wrap: wrap;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #000000;
     transition: 0.3s;
 }
 
 .profile-page .info-box .box:hover {
-    background-color: #f9f9f9;
+    background-color: #B3FFB3;
+    border-bottom: 1px solid #000000
 }
 
 .profile-page .info-box .box>div {
