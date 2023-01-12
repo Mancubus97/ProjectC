@@ -42,7 +42,7 @@
 							</h4>
 						</div>
 						@*X<div class="image">
-							<img src="../images/logo.png" alt="loge image" style="width:200px; height:200px">
+						<img src="../images/logo.png" alt="loge image" style="width:200px; height:200px">
 						</div>*@
 					</div>
 				</div>
@@ -62,18 +62,18 @@
 					<img src="../images/finance.jpg" alt="" style="width:100px; height:100px">
 					<h3>Financiën</h3>
 				</div>
-				
+
 				<p>
 					De implementatiekosten voor deze innovatie zijn
 					<span>@Model.implementCosts</span> euro.
 				</p>
 				<p>
-					De jaarlijkse inkoopkosten van deze innovatie zijn
-					<span>@Model.price</span> euro per jaar.
+					De inkoopkosten van deze innovatie zijn
+					<span>@Model.price</span> per jaar.
 				</p>
 				<p>
 					De totale kosten voor deze innovatie zijn na 5 jaar
-					<span>@(@Model.price * 5 + @Model.implementCosts)</span> euro. (implementatieosten + aantal jaren * inkoopkosten)
+					<span>@(@Model.price * 5 + @Model.implementCosts)</span> euro.
 				</p>
 			</div>
 			<div class="box">
@@ -83,7 +83,7 @@
 				</div>
 				<p>
 					De kosten in aantal uren voor het implementeren van deze innovatie zijn naar schatting
-					<span>@Model.implementHours</span> uur.
+					<span>@Model.implementHours</span>.
 				</p>
 			</div>
 		</div>
@@ -99,30 +99,28 @@
 			<div class="box">
 				<div class="image">
 					<img src="../images/finance.jpg" alt="" style="width:100px; height:100px">
-					<h3>Maatschappelijke opbrengsten</h3>
+					<h3>Financiën</h3>
 				</div>
 				<p>
-					De maatschappelijke waarde word aangegeven door middel van het SROI cijfer: 
+					De maatschappelijke waarde word aangegeven door middel van het SROI cijfer:
 					<span>@Model.sroi</span>(𝑚𝑎𝑎𝑡𝑠𝑐ℎ𝑎𝑝𝑝𝑒𝑙𝑖𝑗𝑘𝑒 𝑜𝑝𝑏𝑟𝑒𝑛𝑔𝑠𝑡𝑒𝑛 − 𝑚𝑎𝑎𝑡𝑠𝑐ℎ𝑎𝑝𝑝𝑒𝑙𝑖𝑗𝑘𝑒 𝑘𝑜𝑠𝑡𝑒𝑛 / 𝐼𝑛𝑖𝑡𝑖ë𝑙𝑒 𝑖𝑛𝑣𝑒𝑠𝑡𝑒𝑟𝑖𝑛𝑔𝑠𝑢𝑖𝑡𝑔𝑎𝑣𝑒)
-					
+
 				</p>
-				
-				
+				<p>
+					Besparing op de personeelskosten van patiënten die hun heupen breken is naar schatting
+					<span>@Model.personelSavings</span> per jaar.
+				</p>
+
 			</div>
 			<div class="box">
 				<div class="image">
 					<img src="../images/time.jpg" alt="Time foto" style="width:100px; height:100px">
-					<h3>Financiën & Tijd</h3>
+					<h3>Tijd</h3>
 				</div>
 				<p>
-					Besparing op de personeelskosten van patiënten die hun heupen breken is naar schatting
-					<span>@Model.personelSavings</span> euro per jaar.
+					De personeelskosten in aantal uren waarop wordt bespaard is naar schatting
+					<span>@Model.hoursSavings</span> per jaar.
 				</p>
-				<p>
-					De personeelskosten in aantal uren waarop word bespaard is naar schatting
-					<span>@Model.hoursSavings</span> uur per jaar.
-				</p>
-
 			</div>
 		</div>
 
@@ -176,25 +174,25 @@
 					type: "line",
 					// Het creëert een data-object met de labels en datasets.
 					data: {
-						
+
 						labels: X_Waarden,
 						// Het geeft de grafiek weer.
 						datasets: [{
 							label: 'Personeelskosten Bespaard',
 							data: [@(@Model.personelSavings * 1), @(@Model.personelSavings * 2), @(@Model.personelSavings * 3), @(@Model.personelSavings * 4), @(@Model.personelSavings * 5)
-								, @(@Model.personelSavings * 6), @(@Model.personelSavings * 7), @(@Model.personelSavings * 8), @(@Model.personelSavings * 9), @(@Model.personelSavings * 10) 
-								, @(@Model.personelSavings * 11), @(@Model.personelSavings * 12), @(@Model.personelSavings * 13), @(@Model.personelSavings * 14)
-								, @(@Model.personelSavings * 15), @(@Model.personelSavings * 16), @(@Model.personelSavings * 17), @(@Model.personelSavings * 18), @(@Model.personelSavings * 19), @(@Model.personelSavings * 20)],
+												, @(@Model.personelSavings * 6), @(@Model.personelSavings * 7), @(@Model.personelSavings * 8), @(@Model.personelSavings * 9), @(@Model.personelSavings * 10)
+												, @(@Model.personelSavings * 11), @(@Model.personelSavings * 12), @(@Model.personelSavings * 13), @(@Model.personelSavings * 14)
+												, @(@Model.personelSavings * 15), @(@Model.personelSavings * 16), @(@Model.personelSavings * 17), @(@Model.personelSavings * 18), @(@Model.personelSavings * 19), @(@Model.personelSavings * 20)],
 							borderColor: "green",
 							fill: false,
-							
+
 						},
 						{
 							label: 'Inkoop Kosten',
 							data: [@(@Model.price * 1), @(@Model.price * 2), @(@Model.price * 3), @(@Model.price * 4), @(@Model.price * 5)
-															, @(@Model.price * 6), @(@Model.price * 7), @(@Model.price * 8), @(@Model.price * 9), @(@Model.price * 10)
-															, @(@Model.price * 11), @(@Model.price * 12), @(@Model.price * 13), @(@Model.price * 14)
-															, @(@Model.price * 15), @(@Model.price * 16), @(@Model.price * 17), @(@Model.price * 18), @(@Model.price * 19), @(@Model.price * 20)],
+																			, @(@Model.price * 6), @(@Model.price * 7), @(@Model.price * 8), @(@Model.price * 9), @(@Model.price * 10)
+																			, @(@Model.price * 11), @(@Model.price * 12), @(@Model.price * 13), @(@Model.price * 14)
+																			, @(@Model.price * 15), @(@Model.price * 16), @(@Model.price * 17), @(@Model.price * 18), @(@Model.price * 19), @(@Model.price * 20)],
 							borderColor: "red",
 							fill: false,
 
@@ -203,14 +201,14 @@
 						{
 							label: 'Personeelsuren Bespaard',
 							data: [@(@Model.hoursSavings * 1), @(@Model.hoursSavings * 2), @(@Model.hoursSavings * 3), @(@Model.hoursSavings * 4), @(@Model.hoursSavings * 5)
-							, @(@Model.hoursSavings * 6), @(@Model.hoursSavings * 7), @(@Model.hoursSavings * 8), @(@Model.hoursSavings * 9), @(@Model.hoursSavings * 10)
-							, @(@Model.hoursSavings * 11), @(@Model.hoursSavings * 12), @(@Model.hoursSavings * 13), @(@Model.hoursSavings * 14)
-							, @(@Model.hoursSavings * 15), @(@Model.hoursSavings * 16), @(@Model.hoursSavings * 17), @(@Model.hoursSavings * 18), @(@Model.hoursSavings * 19), @(@Model.hoursSavings * 20)],
+											, @(@Model.hoursSavings * 6), @(@Model.hoursSavings * 7), @(@Model.hoursSavings * 8), @(@Model.hoursSavings * 9), @(@Model.hoursSavings * 10)
+											, @(@Model.hoursSavings * 11), @(@Model.hoursSavings * 12), @(@Model.hoursSavings * 13), @(@Model.hoursSavings * 14)
+											, @(@Model.hoursSavings * 15), @(@Model.hoursSavings * 16), @(@Model.hoursSavings * 17), @(@Model.hoursSavings * 18), @(@Model.hoursSavings * 19), @(@Model.hoursSavings * 20)],
 							borderColor: "blue",
 							fill: false,
 
 						}]
-													
+
 					},
 
 					options: {
@@ -222,7 +220,7 @@
 				});
 			</script>
 		</div>
-		
+
 
 
 	</div>
