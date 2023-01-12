@@ -27,7 +27,7 @@
 	<!--start edit-->
 	<section class="order" id="order" style="padding-top: 80px">
 		<div class="section-header">
-			<h1 class="heading">
+			<h1 style="margin-top: 50px" class="heading">
 				Voeg hier een nieuwe innovatie toe
 			</h1>
 		</div>
@@ -35,7 +35,7 @@
 			<div class="input-box">
 				<div class="input">
 					<label for="name">Hoe heet het product?</label>
-					<input type="text" name="name" id="name">
+					<input type="text" name="name" id="name" required="">
 				</div>
 			</div>
 			<div class="input-box">
@@ -50,44 +50,44 @@
 						Wat zijn de geschatte totale inkoopkosten voor dit product op jaarbasis? (inclusief btw/bezorgkosten/overige
 						kosten)
 					</label>
-					<input type="number" name="price" id="pricePerPiece" min="0">
+					<input type="number" name="price" id="pricePerPiece" min="0" required="">
 				</div>
 		
 			</div>
 			<div class="input-box">
 				<div class="input">
 					<label for="implementCosts">Wat zijn de implementeringskosten?</label>
-					<input type="number" name="implementCosts" id="implementCosts" min="0">
+					<input type="number" name="implementCosts" id="implementCosts" min="0" required="">
 				</div>
 				<div class="input">
 					<label for="personelSavings">Wat zijn de personeelsbesparingen in euros?</label>
-					<input type="number" name="personelSavings" id="personelSavings" min="0">
+					<input type="number" name="personelSavings" id="personelSavings" min="0" required="">
 				</div>
 			</div>
 			<div class="input-box">
 				<div class="input">
 					<label for="hoursSavings">Wat zijn de personeelsbesparingen in uren?</label>
-					<input type="number" name="hoursSavings" id="hoursSavings" min="0">
+					<input type="number" name="hoursSavings" id="hoursSavings" min="0" required="">
 				</div>
 				<div class="input">
 					<label for="implementHours">Wat zijn de implementeringskosten in aantal uren?</label>
-					<input type="number" name="implementHours" id="implementHours" min="0">
+					<input type="number" name="implementHours" id="implementHours" min="0" required="">
 				</div>
 			</div>
 
 			<div class="input-box">
 				<div class="input">
 					<label for="socialCosts">Wat zijn de maatschappelijke kosten? (Dit is om het SROI cijfer te berekenen)</label>
-					<input type="number" name="socialCosts" id="socialCosts" min="0">
+					<input type="number" name="socialCosts" id="socialCosts" min="0" required="">
 				</div>
 				<div class="input">
 					<label for="socialBenefits">Wat zijn de maatschappelijke opbrengsten? (Dit is om het SROI cijfer te berekenen)</label>
-					<input type="number" name="socialBenefits" id="socialBenefits" min="0">
+					<input type="number" name="socialBenefits" id="socialBenefits" min="0" required="">
 				</div>
 			</div>
 			
 
-			<input type="submit" value="Opslaan" class="btn">
+			<input style="margin-top: 50px" type="submit" value="Opslaan" class="btn">
 		</form>
 	</section>
 	<!--end edit-->

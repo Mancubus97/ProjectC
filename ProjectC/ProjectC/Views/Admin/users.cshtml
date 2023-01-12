@@ -17,6 +17,16 @@
 </head>
 
 <body>
+	<header>
+		<div style="margin: 50px 100px; width: 100px">
+			<form action="../Admin/AdminDashboardMain">
+				<button class="btn">Terug</button>
+			</form>
+		</div>
+		@*<nav class="navbar">
+			<a href="../Admin/AdminDashboardMain">Terug</a>
+		</nav>*@
+	</header>
 	<section class="order" id="order">
 		<div class="section-header">
 
@@ -36,7 +46,7 @@
 						   required />
 				</div>
 				<span id='message'></span>
-				<button type="submit">Aanmelden</button>
+				<button style="margin-bottom: 20px" type="submit">Aanmelden</button>
 			</form>
 		</div>
 
@@ -53,13 +63,13 @@
 					<!-- Start informatie rij -->
 					<div class="box p-20 d-flex align-center">
 						<div class="fs-25">
-							<span class="c-grey">Username</span>
-							<span>@account.username</span>
+							<span style="font-size: 15px" class="green-color">Username</span>
+							<span style="font-size: 15px" >@account.username</span>
 						</div>
 
 						<div class="fs-25">
-							<span class="c-grey">ID</span>
-							<span>@account.id</span>
+							<span style="font-size: 15px" class="green-color">ID</span>
+							<span style="font-size: 15px" >@account.id</span>
 						</div>
 						@if (account.isAdmin)
 						{
@@ -80,17 +90,15 @@
 
 
 						<!-- deze knoppen Account verwijderen  -->
-						<div class="button ">
-							<form  action="/Admin/DeleteAccount" class="delete" method="post" style="background-color:#D1FFD7">
+						<div class="button">
+							<form style="background: transparent" action="/Admin/DeleteAccount" class="delete" method="post">
 								
 								<input type="text" name="id" hidden="hidden" value="@account.id">
 								<input type="text" name="username" hidden="hidden" value="@account.username">
 								<input type="text" name="password" hidden="hidden" value="@account.password">
 								<input type="text" name="isAdmin" hidden="hidden" value="@account.isAdmin">
-								<button type="submit"
-									onclick="alert('Weet u zeker dat u het account wilt verwijderen!')">
-									Account
-									verwijderen
+								<button class="delete-button" type="submit"
+									onclick="alert('Weet u zeker dat u het account wilt verwijderen?')">
 								</button>
 							</form>
 
