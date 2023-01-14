@@ -13,6 +13,7 @@ body {
 	margin: 20px 0 50px;
 }
 
+
 h1 {
 	font-weight: bold;
 	margin: 0;
@@ -125,12 +126,12 @@ footer {
 }
 
 .delete-button {
-	color: white;
-	background: black;
+	color: black;
+	background: red;
 	border: 5px solid black;
 }
 	.delete-button:hover {
 		color: black;
-		background: white;
+		background: green;
 		border: 5px solid white;
 	}

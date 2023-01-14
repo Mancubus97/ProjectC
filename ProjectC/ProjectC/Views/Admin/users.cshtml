@@ -46,7 +46,7 @@
 						   required />
 				</div>
 				<span id='message'></span>
-				<button style="margin-bottom: 20px" type="submit">Aanmelden</button>
+				<button style="margin-bottom: 20px" type="submit" onclick="return confirm('Weet u zeker dat u een nieuwe account wilt aanmaken')">Aanmelden</button>
 			</form>
 		</div>
 
@@ -98,7 +98,7 @@
 								<input type="text" name="password" hidden="hidden" value="@account.password">
 								<input type="text" name="isAdmin" hidden="hidden" value="@account.isAdmin">
 								<button class="delete-button" type="submit"
-									onclick="return confirm('Weet u zeker dat u dit account wilt verwijderen?')">
+									onclick="return confirm('Weet u zeker dat u dit account wilt verwijderen?')">Vewijderen
 								</button>
 							</form>
 
