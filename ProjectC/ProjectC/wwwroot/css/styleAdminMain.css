@@ -935,3 +935,19 @@ header {
 				background: var(--green);
 				color: white;
 			}
+.logout-btn {
+	border: #E30A17;
+	margin-top: 1rem;
+	display: inline-block;
+	font-size: 1.7rem;
+	color: white;
+	background: #E30A17;
+	border-radius: .5rem;
+	cursor: pointer;
+	padding: .8rem 3rem;
+	margin-bottom: 7%;
+}
+	.logout-btn:hover {
+		background: var(--black);
+		letter-spacing: .1rem;
+	}

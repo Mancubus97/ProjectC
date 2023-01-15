@@ -126,12 +126,20 @@ footer {
 }
 
 .delete-button {
-	color: black;
-	background: red;
+	color: white;
+	background: black;
 	border: 5px solid black;
 }
 	.delete-button:hover {
 		color: black;
-		background: green;
+		background: white;
 		border: 5px solid white;
 	}
+
+.logo {
+	max-width: 85%;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
